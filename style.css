@@ -33,7 +33,7 @@ body {
 
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 1.25rem 2rem;
   background: rgba(248,244,238,0.85);
@@ -110,8 +110,8 @@ nav {
 }
 
 .hero-content .fliesstext {
-  font-size: 18px;
-  line-height: 2;
+  font-size: 21px;
+  line-height: 2.1;
   color: var(--text);
   max-width: 580px;
   margin: 0 auto;
@@ -125,7 +125,7 @@ nav {
 .hero-content .fliesstext .pippi {
   font-family: 'Lora', serif;
   font-style: italic;
-  font-size: 20px;
+  font-size: 24px;
   color: var(--tuerkis);
   margin-top: 0.5rem;
 }
@@ -148,16 +148,21 @@ nav {
 }
 
 .portrait-block img.portrait {
-  width: 130px;
-  height: 130px;
+  width: 160px;
+  height: 160px;
   border-radius: 8px;
   object-fit: cover;
   border: 0.5px solid var(--border);
 }
 
 .portrait-block img.siegel {
-  width: 100px;
+  width: 120px;
   height: auto;
+  transition: opacity 0.2s;
+}
+
+.portrait-block img.siegel:hover {
+  opacity: 0.8;
 }
 
 .studio-block {
@@ -215,6 +220,14 @@ nav {
   margin-bottom: 0.5rem;
 }
 
+.karte h3 a {
+  color: var(--heading);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.karte h3 a:hover { color: var(--rosa); }
+
 .karte p {
   font-size: 13px;
   line-height: 1.7;
@@ -241,10 +254,15 @@ footer a {
 }
 
 @media (max-width: 600px) {
-  .nav-links { gap: 1rem; font-size: 13px; }
+  .nav-links {
+    gap: 0.75rem;
+    font-size: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .hero-img-wrap { height: 50vh; }
   .hero-text-overlay { font-size: 24px; }
   .hero-content { padding: 3rem 1.5rem 2rem; }
-  .hero-content .fliesstext { font-size: 16px; }
+  .hero-content .fliesstext { font-size: 18px; }
   .karten-wrap { grid-template-columns: 1fr; }
 }
