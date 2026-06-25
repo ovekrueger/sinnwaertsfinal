@@ -1,1 +1,286 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ausbildung – Sinnwärts Studio</title>
+
+  <link rel="canonical" href="https://sinnwaerts-studio.de/ausbildung.html">
+  <link rel="stylesheet" href="./style.css?v=109">
+
+  <style>
+    .ausbildung-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      opacity: 0.65;
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: opacity 0.2s ease;
+    }
+    .ausbildung-back:hover {
+      opacity: 1;
+    }
+
+    .siegel-block {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .siegel-block img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .siegel-block__text {
+      font-size: 0.9rem;
+      opacity: 0.75;
+      line-height: 1.6;
+    }
+
+    .siegel-block__text strong {
+      display: block;
+      font-size: 1rem;
+      opacity: 1;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .kennzahlen {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 3rem;
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+    }
+
+    .kennzahl {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .kennzahl__zahl {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .kennzahl__label {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      letter-spacing: 0.03em;
+    }
+
+    .themen-liste {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 2rem;
+    }
+
+    .themen-liste li {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .themen-liste li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      .themen-liste {
+        grid-template-columns: 1fr;
+      }
+      .kennzahlen {
+        gap: 1.5rem;
+      }
+      .siegel-block {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="index.html">Sinnwärts Studio</a>
+
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="angebot.html">Angebot</a></li>
+          <li><a href="sucht-regulation.html">Sucht &amp; Regulation</a></li>
+          <li><a href="haltung.html">Haltung</a></li>
+          <li><a href="resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="ki-und-bewusstsein.html">KI &amp; Bewusstsein</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="wrap">
+
+      <!-- ZURÜCK -->
+      <a class="ausbildung-back" href="index.html">
+        ← Zurück zur Startseite
+      </a>
+
+      <!-- SIEGEL + TITEL -->
+      <div class="siegel-block">
+        <img
+          src="images/ltc-siegel.png"
+          alt="Life Trust Coaching – zertifiziert by Veit Lindau"
+        />
+        <div class="siegel-block__text">
+          <strong>Life Trust Coach® – zertifiziert by Veit Lindau</strong>
+          Ausbildung nach EASC-Richtlinien zertifiziert<br>
+          Januar 2023 – September 2024 · Baden-Baden
+        </div>
+      </div>
+
+      <h1>Die Ausbildung</h1>
+
+      <p>
+        Was hinter dieser Arbeit steckt, ist keine Wochenendfortbildung.<br>
+        Es ist eine mehrjährige, intensive Auseinandersetzung –<br>
+        mit Methode, mit Haltung, und mit mir selbst.
+      </p>
+
+      <!-- KENNZAHLEN -->
+      <div class="kennzahlen" aria-label="Ausbildungskennzahlen">
+        <div class="kennzahl">
+          <span class="kennzahl__zahl">849</span>
+          <span class="kennzahl__label">Stunden gesamt</span>
+        </div>
+        <div class="kennzahl">
+          <span class="kennzahl__zahl">20</span>
+          <span class="kennzahl__label">Monate Ausbildung</span>
+        </div>
+        <div class="kennzahl">
+          <span class="kennzahl__zahl">12</span>
+          <span class="kennzahl__label">Module</span>
+        </div>
+        <div class="kennzahl">
+          <span class="kennzahl__zahl">4</span>
+          <span class="kennzahl__label">Monate Mentoring</span>
+        </div>
+      </div>
+
+      <!-- INHALTE -->
+      <h2>Was ich gelernt und integriert habe</h2>
+
+      <p>
+        Innerhalb der Ausbildung wurden folgende Bereiche
+        intensiv erarbeitet, geübt und in die eigene Praxis integriert:
+      </p>
+
+      <ul class="themen-liste">
+        <li>Kommunikations-Skills &amp; Rapport</li>
+        <li>Hypnotische Sprachmuster</li>
+        <li>Intelligente Fragestellungen</li>
+        <li>Körper und Gestik</li>
+        <li>Core Diving</li>
+        <li>Emotionale Intelligenz</li>
+        <li>Stiller, innerer Raum</li>
+        <li>Integrales Coaching</li>
+        <li>Schattenintegration</li>
+        <li>Umgang mit Projektionen</li>
+        <li>Silent Coaching</li>
+        <li>Nonduale Bewusstseinsarbeit</li>
+        <li>Raum der kreativen Präsenz</li>
+        <li>Meditative &amp; intuitive Intelligenz</li>
+        <li>Traumasensibles Coaching</li>
+        <li>NLP Grundlagen</li>
+        <li>Psychotherapie trifft Coaching</li>
+        <li>12 zentrale Lebensthemen</li>
+      </ul>
+
+      <!-- PRÜFUNGEN -->
+      <h2>Prüfungen &amp; Abschluss</h2>
+
+      <p>
+        Die Ausbildung endete nicht mit einer Teilnahmebestätigung –
+        sondern mit echten Prüfungen:
+      </p>
+
+      <ul class="themen-liste">
+        <li>12 monatliche Multiple-Choice-Prüfungen</li>
+        <li>Persönlicher Coachingprozess mit Klient*innen</li>
+        <li>Schriftliche Abschlussprüfung</li>
+      </ul>
+
+      <!-- ABSCHLUSS -->
+      <h2>Was das bedeutet</h2>
+
+      <p>
+        Diese Ausbildung hat meine Haltung nicht nur geschult –<br>
+        sie hat sie grundlegend geformt.
+      </p>
+
+      <p>
+        Regulation vor Erklärung.<br>
+        Ankommen vor Veränderung.<br>
+        Würde vor Diagnose.
+      </p>
+
+      <p>
+        Das ist kein Konzept, das ich gelernt habe.<br>
+        Es ist ein Weg, den ich gegangen bin.
+      </p>
+
+      <!-- ZURÜCK UNTEN -->
+      <p style="margin-top: 3rem;">
+        <a class="ausbildung-back" href="index.html">
+          ← Zurück zur Startseite
+        </a>
+      </p>
+
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap" style="text-align:center; padding:2rem 1rem;">
+      <small style="opacity:.85;">
+        © <span id="y"></span> Sinnwärts Studio ·
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
+      </small>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var y = document.getElementById("y");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+</body>
+</html>
