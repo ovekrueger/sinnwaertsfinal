@@ -76,13 +76,13 @@ nav {
 
 .hero-text-overlay {
   position: absolute;
-  bottom: 3.5rem;
+  bottom: 6rem;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 32px;
-  color: #b85870;
+  color: #d4882a;
   text-shadow: 0 1px 10px rgba(255,255,255,0.4);
   white-space: nowrap;
 }
