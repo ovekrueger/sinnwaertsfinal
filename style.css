@@ -131,6 +131,10 @@ nav {
   color: var(--tuerkis);
   margin-top: 0.5rem;
 }
+.hero-content .fliesstext .sayyess {
+  color: #d4882a;
+  font-size: 26px;
+}
 
 .divider {
   width: 40px;
