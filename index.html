@@ -1,54 +1,191 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ove Krüger · Sinnwärts Studio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
 
-  <nav>
-    <ul class="nav-links">
-      <li><a href="ueber-mich.html">Über mich</a></li>
-      <li><a href="angebot.html">Angebot</a></li>
-      <li><a href="resonanzraum.html">Resonanzraum</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-  </nav>
+:root {
+  --bg-start: #faecd4;
+  --bg-mid: #f2d8b0;
+  --bg-end: #e8c890;
+  --akzent: #b06828;
+  --akzent2: #4a9090;
+  --text: #5a3820;
+  --heading: #2a1a08;
+  --border: rgba(120,80,40,0.2);
+  --card-bg: rgba(255,255,255,0.4);
+}
 
-  <div class="hero-img-wrap">
-    <img src="images/pastel-meer.jpg" alt="Weites Meer im Pastelllicht">
-    <div class="hero-text-overlay">Da ist noch mehr.</div>
-  </div>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <div class="hero-content">
-    <h1>Ich war schon da,<br>wo du gerade hängst.</h1>
-    <p class="subline">Hier darf es langsamer werden.</p>
-    <div class="fliesstext">
-      <p>Manches hat keinen Namen. Es fühlt sich einfach zu viel an. Zu schnell. Zu leer.</p>
-      <p>Noch kein Name nötig. Noch keine Richtung. Es geht hier nicht ums Verstehen – sondern darum, wieder bei dir anzukommen.</p>
-      <p>Manchmal braucht es keinen Plan. Ich kenne das Gefühl. Und ich bleibe.</p>
-    </div>
-  </div>
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(160deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+  min-height: 100vh;
+  color: var(--text);
+}
 
-  <div class="divider"></div>
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: rgba(250,236,212,0.75);
+  backdrop-filter: blur(6px);
+  border-bottom: 0.5px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-  <div class="portrait-block">
-    <img class="portrait" src="images/ove-rolli.jpg" alt="Ove Krüger">
-    <img class="siegel" src="images/ltc-siegel.png" alt="Life Trust Coach Siegel">
-  </div>
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
 
-  <div class="studio-block">
-    <h2>Sinnwärts Studio</h2>
-    <p class="name">Ove Krüger</p>
-  </div>
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
 
-  <footer>
-    © 2026 Ove Krüger · Sinnwärts Studio ·
-    <a href="impressum.html">Impressum</a> ·
-    <a href="datenschutz.html">Datenschutz</a>
-  </footer>
+.nav-links a:hover { color: var(--akzent); }
 
-</body>
-</html>
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-text-overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+}
+
+.hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 400;
+  color: var(--heading);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.hero-content .subline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--akzent);
+  margin-bottom: 3rem;
+}
+
+.hero-content .fliesstext {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 19px;
+  line-height: 2;
+  color: var(--text);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-content .fliesstext p {
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem auto;
+}
+
+.portrait-block {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.portrait-block img.portrait {
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 0.5px solid var(--border);
+}
+
+.portrait-block img.siegel {
+  width: 110px;
+  height: auto;
+}
+
+.studio-block {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  padding: 0 2rem 5rem;
+}
+
+.studio-block h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.25rem;
+}
+
+.studio-block .name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text);
+  border-top: 0.5px solid var(--border);
+}
+
+footer a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .nav-links { gap: 1rem; font-size: 13px; }
+  .hero-img-wrap { height: 50vh; }
+  .hero-text-overlay { font-size: 24px; }
+  .hero-content { padding: 3rem 1.5rem 2rem; }
+  .hero-content .fliesstext { font-size: 17px; }
+  .portrait-block { gap: 1.5rem; }
+}
