@@ -212,6 +212,7 @@ nav {
   font-style: italic;
   font-size: 26px;
   color: var(--tuerkis);
+  white-space: nowrap;
 }
 
 .karten-wrap {
