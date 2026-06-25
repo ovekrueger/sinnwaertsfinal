@@ -268,7 +268,26 @@ footer a {
   border-bottom: 0.5px solid var(--border);
 }
 
-@media (max-width: 600px) {
+.hero-text-top {
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #d4882a;
+  text-shadow: 0 1px 10px rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
+
+.hero-vogel {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  width: 60px;
+  opacity: 0.85;
+}@media (max-width: 600px) {
   .nav-links {
     gap: 0.75rem;
     font-size: 12px;
