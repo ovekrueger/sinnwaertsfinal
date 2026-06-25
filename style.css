@@ -76,7 +76,7 @@ nav {
 
 .hero-text-overlay {
   position: absolute;
-  bottom: 6rem;
+  bottom: 10rem;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Lora', serif;
