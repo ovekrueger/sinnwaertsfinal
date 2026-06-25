@@ -77,12 +77,14 @@ nav {
 .hero-text-overlay {
   position: absolute;
   bottom: 2rem;
-  left: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 32px;
-  color: rgba(255,255,255,0.95);
-  text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+  color: #b85870;
+  text-shadow: 0 1px 10px rgba(255,255,255,0.4);
+  white-space: nowrap;
 }
 
 .hero-content {
@@ -144,15 +146,22 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .portrait-block img.portrait {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 8px;
   object-fit: cover;
   border: 0.5px solid var(--border);
+}
+
+.siegel-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .portrait-block img.siegel {
@@ -161,8 +170,14 @@ nav {
   transition: opacity 0.2s;
 }
 
-.portrait-block img.siegel:hover {
-  opacity: 0.8;
+.portrait-block img.siegel:hover { opacity: 0.8; }
+
+.siegel-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
 }
 
 .studio-block {
@@ -265,4 +280,5 @@ footer a {
   .hero-content { padding: 3rem 1.5rem 2rem; }
   .hero-content .fliesstext { font-size: 18px; }
   .karten-wrap { grid-template-columns: 1fr; }
+  .portrait-block { flex-direction: column; align-items: flex-start; }
 }
