@@ -270,7 +270,7 @@ footer a {
 
 .hero-text-top {
   position: absolute;
-  top: 2.5rem;
+  top: 5rem;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Lora', serif;
