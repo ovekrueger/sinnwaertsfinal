@@ -287,7 +287,8 @@ footer a {
   right: 2rem;
   width: 60px;
   opacity: 0.85;
-}@media (max-width: 600px) {
+}
+@media (max-width: 600px) {
   .nav-links {
     gap: 0.75rem;
     font-size: 12px;
