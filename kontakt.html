@@ -1,1 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt · Ove Krüger · Sinnwärts Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .kontakt-hero {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 5rem 2rem 2rem;
+      text-align: center;
+    }
 
+    .kontakt-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      color: var(--heading);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .kontakt-hero .sub {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--rosa);
+      margin-bottom: 1.5rem;
+    }
+
+    .kontakt-hero .intro {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 2rem 5rem;
+    }
+
+    .wrap h2 {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--heading);
+      margin: 2.5rem 0 1rem;
+    }
+
+    .wrap p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .wrap a {
+      color: var(--tuerkis);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--tuerkis);
+    }
+
+    .divider-soft {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* ERREICHBARKEIT */
+    .erreichbarkeit {
+      background: rgba(255,255,255,0.5);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .erreichbarkeit p {
+      margin-bottom: 0.5rem;
+      font-size: 16px;
+    }
+
+    /* FORMULAR */
+    .kontakt-form label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .kontakt-form input[type="text"],
+    .kontakt-form input[type="email"],
+    .kontakt-form textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      color: var(--heading);
+      background: rgba(255,255,255,0.7);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      box-sizing: border-box;
+      transition: border 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .kontakt-form input:focus,
+    .kontakt-form textarea:focus {
+      outline: none;
+      border-color: var(--tuerkis);
+    }
+
+    .kontakt-form textarea {
+      resize: vertical;
+      min-height: 160px;
+    }
+
+    .kontakt-form .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .kontakt-form .consent input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--tuerkis);
+    }
+
+    .kontakt-form .consent label {
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .kontakt-form .hinweis {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-top: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .kontakt-form button {
+      margin-top: 1.5rem;
+      padding: 1rem 2.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      background: var(--tuerkis);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      width: 100%;
+    }
+
+    .kontakt-form button:hover {
+      opacity: 0.85;
+    }
+
+    /* HINWEIS BLOCK */
+    .hinweis-block {
+      background: rgba(255,255,255,0.5);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+    }
+
+    .hinweis-block p {
+      font-size: 15px;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .kontakt-hero { padding: 3rem 1.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="uebermich.html">Über mich</a></li>
+      <li><a href="begleitung.html">Begleitung</a></li>
+      <li><a href="resonanzraum.html">Resonanzraum</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <div class="kontakt-hero">
+    <h1>Trau dich ruhig –</h1>
+    <p class="sub">ein Hallo reicht.</p>
+    <p class="intro">Wenn du spürst dass meine Arbeit dich anspricht – melde dich einfach. Ich lese jede Anfrage persönlich und antworte in Ruhe.</p>
+  </div>
+
+  <div class="wrap">
+
+    <h2>So erreichst du mich</h2>
+
+    <div class="erreichbarkeit">
+      <p><strong>E-Mail:</strong> <a href="mailto:ovecoaching@icloud.com">ovecoaching@icloud.com</a></p>
+      <p><strong>Telefon:</strong> <a href="tel:+4915734567782">0157 345 677 82</a></p>
+      <p><strong>Ort:</strong> Hamburg · Online & vor Ort</p>
+    </div>
+
+    <div class="divider-soft"></div>
+
+    <h2>Deine Nachricht</h2>
+
+    <form id="contactForm" class="kontakt-form" action="https://formspree.io/f/xpwkzjwk" method="POST">
+      <input type="hidden" name="_subject" value="Neue Nachricht – Sinnwärts Studio">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+             style="position:absolute;left:-9999px;" aria-hidden="true">
+
+      <label for="name">Name *</label>
+      <input id="name" name="name" type="text" required placeholder="Dein Name">
+
+      <label for="email">E-Mail *</label>
+      <input id="email" name="email" type="email" required placeholder="deine@email.de">
+
+      <label for="msg">Was bewegt dich?</label>
+      <textarea id="msg" name="message"
+        placeholder="Schreib einfach was dich gerade beschäftigt – kein perfekter Text nötig."></textarea>
+
+      <div class="consent">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden. <a href="datenschutz.html">Datenschutzhinweis</a></label>
+      </div>
+
+      <p class="hinweis">Ich arbeite bewusst entschleunigt. Antworten kommen in der Regel innerhalb weniger Tage. Eine Anfrage ist ein erster, beidseitig offener Kontakt – kein Versprechen, keine Verpflichtung.</p>
+
+      <button type="submit">Nachricht senden</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          });
+          if (res.ok) {
+            form.innerHTML = "<p><strong>Danke – deine Nachricht ist angekommen.</strong></p>";
+          } else {
+            form.innerHTML = "<p style='color:red;'>Fehler beim Senden – bitte versuch es später erneut.</p>";
+          }
+        } catch (err) {
+          form.innerHTML = "<p style='color:red;'>Netzwerkfehler – bitte später erneut versuchen.</p>";
+        }
+      });
+    </script>
+
+    <noscript>
+      <p>JavaScript aus? Schreib mir direkt: <a href="mailto:ovecoaching@icloud.com">ovecoaching@icloud.com</a></p>
+    </noscript>
+
+    <div class="divider-soft"></div>
+
+    <div class="hinweis-block">
+      <p><strong>Wofür dieser Kontakt gedacht ist</strong><br>
+      Erstkontakt · Fragen · Orientierung · Resonanz</p>
+      <p><strong>Wofür nicht</strong><br>
+      Akute Krisen · Notfälle · Psychotherapie · medizinische Beratung</p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Ove Krüger · Sinnwärts Studio ·
+    <a href="impressum.html">Impressum</a> ·
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
