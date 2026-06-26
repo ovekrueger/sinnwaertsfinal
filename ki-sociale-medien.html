@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -30,7 +29,7 @@
       margin-bottom: 2rem;
     }
 
-    .ki-portrait-block {
+    .portrait-intro {
       display: flex;
       align-items: flex-start;
       gap: 2.5rem;
@@ -38,28 +37,32 @@
       flex-wrap: wrap;
     }
 
-    .ki-portrait-block figure {
-      flex-shrink: 0;
-      margin: 0;
-      text-align: center;
-    }
-
-    .ki-portrait-block figure img {
-      width: 200px;
+    .portrait-intro img {
+      width: 220px;
+      height: 260px;
+      object-fit: cover;
+      object-position: center top;
       border-radius: 8px;
+      flex-shrink: 0;
       border: 0.5px solid var(--border);
     }
 
-    .ki-portrait-block figure figcaption {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 13px;
-      opacity: 0.6;
-      margin-top: 0.4rem;
-    }
-
-    .ki-portrait-block .ki-text {
+    .portrait-intro .portrait-text {
       flex: 1;
       min-width: 200px;
+    }
+
+    .portrait-intro .ich-denke {
+      font-family: 'Lora', serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 400;
+      color: var(--heading);
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .portrait-intro .ich-denke span {
+      color: var(--tuerkis);
     }
 
     .wrap {
@@ -130,6 +133,45 @@
       margin: 0;
     }
 
+    .android-block {
+      margin: 2.5rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 0.5px solid var(--border);
+    }
+
+    .android-block img {
+      width: 100%;
+      display: block;
+    }
+
+    .android-block figcaption {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      opacity: 0.6;
+      padding: 0.5rem 1rem;
+      text-align: center;
+    }
+
+    .portrait-85 {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .portrait-85 img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 8px;
+      border: 0.5px solid var(--border);
+    }
+
+    .portrait-85 figcaption {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 0.5rem;
+    }
+
     .kompetenz-block {
       background: rgba(255,255,255,0.5);
       border: 0.5px solid var(--border);
@@ -150,25 +192,6 @@
       margin-top: 3rem;
       padding-top: 1rem;
       border-top: 0.5px solid var(--border);
-    }
-
-    .portrait-85 {
-      margin: 2rem 0;
-      text-align: center;
-    }
-
-    .portrait-85 img {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 8px;
-      border: 0.5px solid var(--border);
-    }
-
-    .portrait-85 figcaption {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 13px;
-      opacity: 0.6;
-      margin-top: 0.5rem;
     }
 
     .kennenlernen {
@@ -201,8 +224,8 @@
 
     @media (max-width: 600px) {
       .seiten-hero { padding: 3rem 1.5rem 1.5rem; }
-      .ki-portrait-block { flex-direction: column; }
-      .ki-portrait-block figure img { width: 100%; }
+      .portrait-intro { flex-direction: column; }
+      .portrait-intro img { width: 100%; height: auto; }
     }
   </style>
 </head>
@@ -220,19 +243,16 @@
 
   <div class="seiten-hero">
     <h1>KI & Social Media</h1>
-    <p class="sub">Ich denke. KI rechnet.</p>
+    <p class="sub">Nicht das Tool entscheidet. Die Haltung.</p>
   </div>
 
   <div class="wrap">
 
-    <div class="ki-portrait-block">
-      <figure>
-        <img src="images/ich-denke-ki-rechnet.png" alt="Ove Krüger – KI-generiert">
-        <figcaption>KI-generiert</figcaption>
-      </figure>
-      <div class="ki-text">
+    <div class="portrait-intro">
+      <img src="images/ove-weisses-hemd.webp" alt="Ove Krüger">
+      <div class="portrait-text">
+        <p class="ich-denke">Ich denke.<br><span>KI rechnet.</span></p>
         <p>Diese Seite ist keine Technik-Show.</p>
-        <p>Sie ist eine Einordnung.</p>
         <p>KI kann entlasten. Und sie kann abhängig machen.</p>
         <p>Entscheidend ist nicht das Tool. Entscheidend ist die Haltung.</p>
       </div>
@@ -244,14 +264,14 @@
 
     <p>Jugendliche verbringen heute 6–8 Stunden täglich auf Instagram, TikTok, Snapchat. Das ist kein Zufall und kein Design-Fehler.</p>
 
-    <p>Es ist Absicht.</p>
+    <p><strong>Es ist Absicht.</strong></p>
 
     <p>Die Techkonzerne haben das Suchtmodell bewusst eingebaut. Variable Belohnungen. Unendliches Scrollen. Benachrichtigungen. Alles darauf ausgelegt das Nervensystem im Alarm zu halten – weil Aufmerksamkeit ihr Geschäftsmodell ist.</p>
 
     <p>Die Dopaminkicks beim Scrollen haben dasselbe Suchtpotenzial wie Heroin. Keine Metapher. Neurobiologisch. Dieselben Mechanismen. Dieselben Entzugserscheinungen. Dieselbe Kontrolllosigkeit.</p>
 
     <div class="kern-satz">
-      <p>Wir werden de facto dümmer. Unsere Gehirne fragmentieren. Die Konzentrationsfähigkeit schwindet. Die Fähigkeit Dinge zu verknüpfen – verloren. Wir befinden uns in einer ständigen Überregulation.</p>
+      <p>Wir werden de facto dümmer. Unsere Gehirne fragmentieren. Die Konzentrationsfähigkeit schwindet. Wir befinden uns in einer ständigen Überregulation.</p>
     </div>
 
     <p>Die meisten Menschen wissen das nicht. Oder wollen es nicht wissen. Weil der nächste Kick nur einen Scroll entfernt ist.</p>
@@ -261,6 +281,11 @@
     <div class="divider-soft"></div>
 
     <h2>Was KI damit zu tun hat</h2>
+
+    <figure class="android-block">
+      <img src="images/ki-android.jpg" alt="Androider Kopf mit kreisenden Rechenprozessen – KI-generiert">
+      <figcaption>KI-generiert</figcaption>
+    </figure>
 
     <p>KI und Social Media haben denselben Ursprung: Technologie die das Nervensystem anspricht. Der Unterschied liegt in der Haltung mit der man sie benutzt.</p>
 
@@ -280,11 +305,9 @@
 
     <p>Nicht als Zielbild dem ich hinterherlaufe. Sondern als Erinnerung an das was bereits in mir angelegt ist.</p>
 
-    <p>Ich lasse mich regelmäßig von diesem zukünftigen Ich beraten – und bekomme dadurch Zugang zu dem was ich bereits weiß aber noch nicht klar sehe.</p>
-
     <figure class="portrait-85">
       <img src="images/ove-85.-portrait.png" alt="Ove als 85-jähriger Referenzpunkt – KI-generiert">
-      <figcaption>KI-generiert · Mein innerer Referenzpunkt – nicht als Zielbild, sondern als Erinnerung an das was schon da ist.</figcaption>
+      <figcaption>KI-generiert · Mein innerer Referenzpunkt</figcaption>
     </figure>
 
     <div class="divider-soft"></div>
