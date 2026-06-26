@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resonanzraum · Ove Krüger · Sinnwärts Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-resonanz {
+      position: relative;
+      width: 100%;
+      height: 65vh;
+      overflow: hidden;
+    }
 
+    .hero-resonanz img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-resonanz-text {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 28px;
+      color: white;
+      text-shadow: 0 1px 12px rgba(0,100,100,0.4);
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+
+    .wrap h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(32px, 5vw, 46px);
+      font-weight: 400;
+      color: var(--tuerkis);
+      margin-bottom: 2rem;
+      line-height: 1.3;
+    }
+
+    .wrap p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .wrap em {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--rosa);
+    }
+
+    .intro-block {
+      margin-bottom: 3rem;
+    }
+
+    .intro-block p {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .intro-block .kolosseum {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-size: 17px;
+    }
+
+    .divider-soft {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    .wrap h2 {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--heading);
+      margin: 2.5rem 0 1rem;
+    }
+
+    /* IMPULSE KARTEN */
+    .impulse-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 3rem;
+    }
+
+    .impuls-karte {
+      background: rgba(255,255,255,0.5);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      border-top: 2px solid var(--tuerkis);
+    }
+
+    .impuls-karte h3 {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--heading);
+      margin-bottom: 0.75rem;
+    }
+
+    .impuls-karte p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* BLOG KARTEN */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 3rem;
+    }
+
+    .blog-karte {
+      background: rgba(255,255,255,0.5);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s;
+    }
+
+    .blog-karte:hover {
+      background: rgba(255,255,255,0.8);
+    }
+
+    .blog-karte h3 {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-karte p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .blog-karte-1 { border-top: 2px solid var(--rosa); }
+    .blog-karte-2 { border-top: 2px solid var(--tuerkis); }
+
+    /* KENNENLERNEN */
+    .kennenlernen {
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      padding: 2rem 2rem;
+      text-align: center;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .kennenlernen p {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .kennenlernen a {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      color: var(--rosa);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--rosa);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .kennenlernen a:hover { opacity: 0.7; }
+
+    @media (max-width: 600px) {
+      .hero-resonanz { height: 50vh; }
+      .hero-resonanz-text { font-size: 20px; white-space: normal; width: 90%; }
+      .impulse-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="uebermich.html">Über mich</a></li>
+      <li><a href="begleitung.html">Begleitung</a></li>
+      <li><a href="resonanzraum.html">Resonanzraum</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-resonanz">
+    <img src="images/resonanz-klang-blau.jpg" alt="Klangschale im Sand">
+    <div class="hero-resonanz-text">Was klingt in dir –</div>
+  </div>
+
+  <div class="wrap">
+
+    <h1>Resonanzraum</h1>
+
+    <div class="intro-block">
+      <p>Ich werd dir jetzt nicht erklären was Resonanz ist.</p>
+
+      <p>Wenn wir uns begegnen – online oder live – schau mir in die Augen. Lausche mir mit allem was du hast. Und wenn deine Augen anfangen zu leuchten – dann weißt du es.</p>
+
+      <p>Das ist eine richtig geile Verbindung.</p>
+
+      <div class="divider-soft"></div>
+
+      <p class="kolosseum">Stell dir vor: 90.000 Menschen im Kolosseum. 90% wollen Spektakel. Empörungsgeilheit. Angstpornographie. Den nächsten Kick.</p>
+
+      <p class="kolosseum">8% sind vielleicht interessiert – aber kriegen den Arsch nicht hoch.</p>
+
+      <p class="kolosseum">Und 2% lassen sich wirklich berühren.</p>
+
+      <p class="kolosseum">Für die 2% ist dieser Raum.</p>
+
+      <div class="divider-soft"></div>
+
+      <p>Wenn du merkst dass in diesem Moment etwas anders ist – in deinem Körper, in deinem Gefühl. Vielleicht Neugierde. Vielleicht Begeisterung. Vielleicht einfach nur: da ist was.</p>
+
+      <p>Dann bist du bei dir gelandet.</p>
+
+      <p>Und spürst dass etwas in dir angeschaut werden möchte.</p>
+
+      <p>Ohne dass wir beide irgendwas machen müssen.</p>
+    </div>
+
+    <div class="divider-soft"></div>
+
+    <h2>Drei Impulse – sofort nutzbar</h2>
+    <p>Nimm einen. Mach ihn einmal. Hör danach kurz nach was anders ist.</p>
+
+    <div class="impulse-grid">
+      <div class="impuls-karte">
+        <h3>10 Sekunden Fokus</h3>
+        <p>Such dir etwas in deiner Nähe. Schau es 10 Sekunden lang an.<br><br>Gedanken kommen? Gut. Zurück zum Sehen.</p>
+      </div>
+      <div class="impuls-karte">
+        <h3>3 Dinge heute</h3>
+        <p>Nimm dir heute Abend einen Moment. Drei Dinge die gut gelaufen sind – auch wenn sie klein waren.<br><br>Nicht bewerten. Nur erinnern.</p>
+      </div>
+      <div class="impuls-karte">
+        <h3>1 Minute Ankommen</h3>
+        <p>Atme aus. Lass die Ausatmung etwas länger werden.<br><br>Spür danach kurz: Wo ist gerade Boden?</p>
+      </div>
+    </div>
+
+    <div class="divider-soft"></div>
+
+    <h2>Impulse & Gedanken</h2>
+    <p>Kleine Einladungen zum Innehalten. Zum Lesen wenn du Zeit hast und tiefer gehen willst.</p>
+
+    <div class="blog-grid">
+      <a href="resonanzraum/empoerungs-geilheit.html" class="blog-karte blog-karte-1">
+        <h3>Empörungsgeilheit</h3>
+        <p>Die Sucht sich aufzuregen. Und was sie wirklich kostet.</p>
+      </a>
+      <a href="resonanzraum/dankbarkeit.html" class="blog-karte blog-karte-2">
+        <h3>Was bedeutet Dankbarkeit wirklich?</h3>
+        <p>Nicht als Pflichtgefühl – sondern als echte Wahrnehmung dessen was schon da ist.</p>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="kennenlernen">
+    <p>Neugierig geworden?</p>
+    <a href="kontakt.html">Kostenloses Erstgespräch vereinbaren →</a>
+  </div>
+
+  <footer>
+    © 2026 Ove Krüger · Sinnwärts Studio ·
+    <a href="impressum.html">Impressum</a> ·
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
