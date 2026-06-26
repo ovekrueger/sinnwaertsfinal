@@ -1,1 +1,270 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über mich · Ove Krüger · Sinnwärts Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-ueber {
+      position: relative;
+      width: 100%;
+      height: 65vh;
+      overflow: hidden;
+    }
+
+    .hero-ueber img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-ueber-text {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 28px;
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+
+    .wrap h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 400;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .wrap .intro-sub {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--rosa);
+      margin-bottom: 3rem;
+    }
+
+    .portrait-text-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .portrait-text-block img {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      border: 0.5px solid var(--border);
+    }
+
+    .portrait-text-block .portrait-text {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .wrap h2 {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--heading);
+      margin: 2.5rem 0 1rem;
+    }
+
+    .wrap p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .wrap em {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--rosa);
+    }
+
+    .wrap .pippi-satz {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--tuerkis);
+      margin: 1.5rem 0;
+    }
+
+    .wrap .orange-satz {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #d4882a;
+      margin: 1.5rem 0;
+    }
+
+    .wrap .zurueck {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      opacity: 0.65;
+      text-decoration: none;
+      margin-top: 3rem;
+      transition: opacity 0.2s;
+    }
+
+    .wrap .zurueck:hover { opacity: 1; }
+
+    .divider-soft {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero-ueber { height: 50vh; }
+      .hero-ueber-text { font-size: 20px; white-space: normal; text-align: center; width: 90%; }
+      .portrait-text-block { flex-direction: column; }
+      .portrait-text-block img { width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="uebermich.html">Über mich</a></li>
+      <li><a href="haltung.html">Haltung</a></li>
+      <li><a href="begleitung.html">Begleitung</a></li>
+      <li><a href="resonanzraum.html">Resonanzraum</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-ueber">
+    <img src="images/teddy-rand.jpg" alt="Teddy am Strand – Geborgen und doch frei">
+    <div class="hero-ueber-text">Geborgen. Durch die Mangel gedreht. Und doch frei.</div>
+  </div>
+
+  <div class="wrap">
+
+    <h1>Über mich</h1>
+    <p class="intro-sub">Beziehung vor Erklärung. Haltung vor Methode.</p>
+
+    <div class="portrait-text-block">
+      <img src="images/ueber-mich-portrait.jpg" alt="Ove Krüger">
+      <div class="portrait-text">
+        <p>Ich bin kein Therapeut. Kein Guru. Kein Motivationsredner.</p>
+        <p>Ich bin jemand der weiß wovon er redet – weil er da war. Ganz unten. Mehrmals.</p>
+        <p>Krasser Typ der weiß wovon er redet. Stark im Sturm. Mit Humor und Ernsthaftigkeit. Und der inneren Ruhe zu halten was gerade ist – nicht auszuhalten. Zu halten.</p>
+      </div>
+    </div>
+
+    <div class="divider-soft"></div>
+
+    <h2>Ich war nicht immer der, der begleitet.</h2>
+
+    <p>Ich war der, der kämpft. Der funktioniert. Der sich selbst wegmacht.</p>
+
+    <p>Früh haben andere entschieden wer ich sein soll. IQ 138 mit vier Jahren – und damit war die Rolle klar. Nicht "was brauchst du?" sondern "da geht noch mehr." Meine eigenen Bedürfnisse? Nebensache. Das Drama des begabten Kindes – Alice Miller hat es besser beschrieben als ich es je könnte.</p>
+
+    <p>Was dabei entsteht wenn jemand nie lernt was er wirklich braucht: er sucht es woanders. Ich habe es im Alkohol gefunden. Für einen Moment. Dieses Gefühl von Verbundenheit, von Erfüllung, von – <em>boah, das ist geil.</em> Dopaminbesoffen. Angekommen.</p>
+
+    <p>Natürlich war es das nicht. Aber es war das Nächste was ich kannte.</p>
+
+    <p>Zwanzig Jahre. Delirien. Unfälle. Sozialer Absturz. Krankenhäuser. Therapien. Kalte Entzüge. Qualifizierte Entzüge. Eine Schwerbehinderung zu 70 Prozent.</p>
+
+    <p>Gekämpft habe ich – das stimmt. Aber ehrlicher ist: ich habe mich verpisst. Der Alkohol war mein Ausweg. Meine Art zu verschwinden wenn es zu viel wurde.</p>
+
+    <p>Das Leben hat mich nicht geschont. Ich mich auch nicht.</p>
+
+    <p><strong>Ich weiß was ich weiß – weil ich da war.</strong></p>
+
+    <div class="divider-soft"></div>
+
+    <h2>Say Yes to your Scheiß.</h2>
+
+    <p>Irgendwann war der Widerstand aufgebraucht. Die Kontrolle weg. Der Kampf vorbei.</p>
+
+    <p>Nicht weil ich stark war – sondern weil ich nicht mehr konnte.</p>
+
+    <p><em>Vater, in deine Hände befehle ich meinen Geist.</em></p>
+
+    <p>Ob Jesus eine historische Person ist spielt für mich keine Rolle. Aber dieser Satz hat mich gerettet. Die vollständige Hingabe. Aufhören zu kämpfen. Loslassen.</p>
+
+    <p>Und genau da begann etwas Neues.</p>
+
+    <p>Ich lebe seit Jahren abstinent. Ich bin dankbar für jeden einzelnen Tag meines Absturzes – weil er mich genau dahin gebracht hat wo ich heute bin. Ohne das Dunkel keine Warme Weite.</p>
+
+    <p class="orange-satz">Immer wieder aufstehen.</p>
+
+    <p>Das ist kein Motivationssatz. Das ist meine Biografie.</p>
+
+    <p>Und dann irgendwann noch etwas anderes gelernt: meine Zartheit zu spüren. Meine Traurigkeit. Meine Melancholie. Und zu merken – das darf sein. Das ist auch ich.</p>
+
+    <p>Als mir klar wurde dass andere Menschen mich nicht verletzen können – sondern dass das immer eine alte Verletzung in mir ist die ich auf alle möglichen komischen Arten kompensiert habe – bin ich innerlich weicher geworden. Empathischer. Und gleichzeitig handlungsfähiger.</p>
+
+    <p class="pippi-satz">Nicht trotzdem. Deshalb.</p>
+
+    <p class="orange-satz">Und dann: Das Leben ist geil. Wirklich.</p>
+
+    <div class="divider-soft"></div>
+
+    <h2>Wie ich begleite</h2>
+
+    <p>Ich bin nicht hier um etwas wegzumachen.</p>
+
+    <p>Ich bin hier damit du wieder landen kannst – und von dort aus siehst was möglich ist.</p>
+
+    <p>Ich bin nicht derjenige der sagt wo es langgeht. Ich bin derjenige der bleibt. Der Raum hält ohne zu drängen. Der weiß wie es sich anfühlt wenn nichts mehr greift – und der deshalb nicht in Panik gerät wenn es bei dir genauso ist.</p>
+
+    <p>Ich begegne dem was kommt mit Humor wenn es passt. Mit Ernsthaftigkeit wenn es nötig ist.</p>
+
+    <p class="pippi-satz">Immer Freund. Manchmal liebevoller Arschtreter. Immer auf deiner Seite.</p>
+
+    <p>Regulation vor Transformation. Ankommen vor Veränderung. Würde vor Diagnose.</p>
+
+    <p>Nicht Therapie. Nicht Optimierung. Sondern: erst landen. Dann schauen was möglich ist.</p>
+
+    <div class="divider-soft"></div>
+
+    <h2>Und noch was</h2>
+
+    <p>Ich werde nie erwachsen werden. Das will ich auch gar nicht.</p>
+
+    <p>Beim ersten Treffen mit meiner Liebsten vor fünfzehn Jahren habe ich alles auf den Tisch gelegt. Nichts zurückgehalten. Das ist nach wie vor meine Devise.</p>
+
+    <p>Nebenbei schreibe ich an meinem Buch – Arbeitstitel: <em>Holpersteine</em>. Immer wieder aufstehen.</p>
+
+    <a class="zurueck" href="index.html">← Zurück zur Startseite</a>
+
+  </div>
+
+  <footer>
+    © 2026 Ove Krüger · Sinnwärts Studio ·
+    <a href="impressum.html">Impressum</a> ·
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
