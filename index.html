@@ -5,28 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ove Krüger · Sinnwärts Studio</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-text-overlay {
+      position: absolute;
+      bottom: 3.5rem;
+      left: 50%;
+      transform: translateX(-50%) perspective(300px) rotateX(12deg);
+      transform-origin: bottom center;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: clamp(28px, 5vw, 48px);
+      color: #f5e6c8;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.18);
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+  </style>
 </head>
 <body>
-
   <nav>
-   <ul class="nav-links">
-  <li><a href="index.html">Start</a></li>
-  <li><a href="uebermich.html">Über mich</a></li>
-  <li><a href="begleitung.html">Begleitung</a></li>
-  <li><a href="resonanzraum.html">Resonanzraum</a></li>
-  <li><a href="kontakt.html">Kontakt</a></li>
-</ul>
+    <ul class="nav-links">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="uebermich.html">Über mich</a></li>
+      <li><a href="begleitung.html">Begleitung</a></li>
+      <li><a href="resonanzraum.html">Resonanzraum</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
   </nav>
 
-<div class="hero-img-wrap">
-  <img src="images/pastel-meer.jpg" alt="Weites Meer im Pastelllicht">
-  <div class="hero-text-top">Flieg, Schmetterling, flieg.</div>
-  <svg class="hero-vogel" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,15 Q10,0 20,8 Q30,0 40,8 Q50,0 60,15" 
-          stroke="#d4882a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-  </svg>
-  <div class="hero-text-overlay">Da ist noch mehr.</div>
-</div>
+  <div class="hero-img-wrap">
+    <img src="images/pastel-meer.jpg" alt="Weites Meer im Pastelllicht">
+    <div class="hero-text-top">Flieg, Schmetterling, flieg.</div>
+    <svg class="hero-vogel" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,15 Q10,0 20,8 Q30,0 40,8 Q50,0 60,15"
+            stroke="#d4882a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="hero-text-overlay">Da ist noch mehr.</div>
+  </div>
 
   <div class="hero-content">
     <h1>Ich war schon da,<br>wo du gerade steckst.</h1>
@@ -45,14 +60,14 @@
   <div class="divider"></div>
 
   <div class="portrait-block">
-  <img class="portrait" src="images/ove-rolli.jpg" alt="Ove Krüger">
-  <div class="siegel-block">
-    <a href="curriculum.html">
-      <img class="siegel" src="images/ltc-siegel.png" alt="Life Trust Coach Siegel">
-    </a>
-    <p class="siegel-text">Life Trust Coach®<br>zertifiziert nach EASC-Richtlinien</p>
+    <img class="portrait" src="images/ove-rolli.jpg" alt="Ove Krüger">
+    <div class="siegel-block">
+      <a href="curriculum.html">
+        <img class="siegel" src="images/ltc-siegel.png" alt="Life Trust Coach Siegel">
+      </a>
+      <p class="siegel-text">Life Trust Coach®<br>zertifiziert nach EASC-Richtlinien</p>
+    </div>
   </div>
-</div>
 
   <div class="studio-block">
     <h2>Sinnwärts Studio</h2>
@@ -83,16 +98,16 @@
       <p>Kleine Einladungen zum Innehalten. Keine Aufgaben. Kein Erwarten.</p>
     </div>
   </div>
+
   <div class="kennenlernen">
-  <p>Neugierig geworden?</p>
-  <a href="kontakt.html">Kostenloses Kennenlernen vereinbaren →</a>
-</div>
+    <p>Neugierig geworden?</p>
+    <a href="kontakt.html">Kostenloses Kennenlernen vereinbaren →</a>
+  </div>
 
   <footer>
     © 2026 Ove Krüger · Sinnwärts Studio ·
     <a href="impressum.html">Impressum</a> ·
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
-
 </body>
 </html>
