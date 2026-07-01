@@ -109,6 +109,10 @@
       margin-bottom: 0;
     }
 
+    .format-block p + p {
+      margin-top: 0.5rem;
+    }
+
     .hinweis-box {
       background: rgba(255,255,255,0.4);
       border: 0.5px solid var(--border);
@@ -123,33 +127,68 @@
       font-size: 16px;
     }
 
+    /* --- Preisstruktur --- */
+    .preis-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .preis-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .preis-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      color: var(--text);
+    }
+
+    .preis-wert {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      color: var(--heading);
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+
+    /* --- CTA-Block unten --- */
     .kennenlernen {
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto 3rem;
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
       border-top: 0.5px solid var(--border);
     }
 
-    .kennenlernen p {
+    .kennenlernen-headline {
       font-family: 'Lora', serif;
       font-style: italic;
-      font-size: 18px;
+      font-size: clamp(22px, 3.5vw, 28px);
+      font-weight: 400;
       color: var(--text);
-      margin-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
     }
 
-    .kennenlernen a {
+    .kennenlernen-btn {
+      display: inline-block;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 15px;
-      color: var(--rosa);
+      font-size: 17px;
+      color: #fff;
+      background: var(--rosa);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
       text-decoration: none;
-      border-bottom: 0.5px solid var(--rosa);
-      padding-bottom: 2px;
-      transition: opacity 0.2s;
+      border: none;
+      transition: opacity 0.25s, transform 0.2s;
     }
 
-    .kennenlernen a:hover { opacity: 0.7; }
+    .kennenlernen-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
   </style>
 </head>
 <body>
@@ -219,11 +258,28 @@
 
     <h2>Wertschätzung & Rahmen</h2>
 
-    <div class="hinweis-box">
-      <p>Aktuell arbeite ich ohne veröffentlichte Festpreise. Meine Praxis befindet sich im Aufbau, der rechtliche Rahmen wird derzeit geklärt.</p>
+    <div class="preis-item">
+      <span class="preis-label">Einzelsession</span>
+      <span class="preis-wert">150 €</span>
     </div>
 
-    <p>Der Ausgleich erfolgt transparent und in gegenseitiger Abstimmung – klar, fair und ohne Druck.</p>
+    <div class="preis-item">
+      <span class="preis-label">Begleitprozesse</span>
+      <span class="preis-wert">im Gespräch</span>
+    </div>
+
+    <div class="preis-item">
+      <span class="preis-label">Erstgespräch</span>
+      <span class="preis-wert">kostenlos</span>
+    </div>
+
+    <p style="margin-top: 1.5rem;">Begleitprozesse klären wir im Gespräch. Was du brauchst, wie lange, in welchem Rhythmus – das zeigt sich. Abgerechnet wird monatlich.</p>
+
+    <p>Das Erstgespräch ist kostenlos. Kein Verkaufsgespräch. Kein Druck. Nur: passt das hier für dich.</p>
+
+    <p>Wenn Geld gerade knapp ist – sprich mich an. Daran soll es nicht scheitern.</p>
+
+    <p>Nach dem Erstgespräch – wenn es für beide Seiten stimmt – arbeiten wir mit einem schriftlichen Vertrag. Klar, fair, verbindlich.</p>
 
     <div class="divider-soft"></div>
 
@@ -244,8 +300,8 @@
   </div>
 
   <div class="kennenlernen">
-    <p>Neugierig geworden?</p>
-    <a href="kontakt.html">Kostenloses Erstgespräch vereinbaren →</a>
+    <p class="kennenlernen-headline">Neugierig geworden?</p>
+    <a class="kennenlernen-btn" href="kontakt.html">Kostenloses Erstgespräch vereinbaren →</a>
   </div>
 
   <footer>
