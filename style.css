@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
 
+/* =========================
+   CSS VARIABLEN
+   ========================= */
 :root {
   --bg-1: #f8f4ee;
   --bg-2: #fce8ec;
@@ -7,7 +10,9 @@
   --bg-4: #e8f4f4;
   --bg-5: #f0f8ec;
   --rosa: #b85870;
+  --rosa-hell: #fce8ec;
   --tuerkis: #3a8888;
+  --tuerkis-hell: #e8f4f4;
   --lila: #7858a0;
   --gelb: #c8a020;
   --text: #4a3840;
@@ -15,6 +20,9 @@
   --border: rgba(180,120,140,0.2);
 }
 
+/* =========================
+   RESET & BASE
+   ========================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -31,6 +39,9 @@ body {
   color: var(--text);
 }
 
+/* =========================
+   NAVIGATION
+   ========================= */
 nav {
   display: flex;
   justify-content: center;
@@ -60,6 +71,9 @@ nav {
 
 .nav-links a:hover { color: var(--rosa); }
 
+/* =========================
+   HERO — STARTSEITE
+   ========================= */
 .hero-img-wrap {
   position: relative;
   width: 100%;
@@ -74,19 +88,46 @@ nav {
   object-position: center;
 }
 
-.hero-text-overlay {
+.hero-text-top {
   position: absolute;
-  bottom: 15rem;
+  top: 5rem;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Lora', serif;
   font-style: italic;
-  font-size: 32px;
+  font-size: 28px;
   color: #d4882a;
   text-shadow: 0 1px 10px rgba(255,255,255,0.4);
   white-space: nowrap;
 }
 
+.hero-vogel {
+  position: absolute;
+  top: 4rem;
+  right: 5%;
+  width: 60px;
+  opacity: 0.85;
+}
+
+.hero-text-overlay {
+  position: absolute;
+  bottom: 7.5rem;
+  left: 50%;
+  transform: translateX(-50%) perspective(200px) rotateX(20deg);
+  transform-origin: bottom center;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 300;
+  color: #f5e6c8;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.18);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* =========================
+   HERO CONTENT — STARTSEITE
+   ========================= */
 .hero-content {
   max-width: 680px;
   margin: 0 auto;
@@ -131,18 +172,15 @@ nav {
   color: var(--tuerkis);
   margin-top: 0.5rem;
 }
+
 .hero-content .fliesstext .sayyess {
   color: #d4882a;
   font-size: 26px;
 }
 
-.divider {
-  width: 40px;
-  height: 1px;
-  background: var(--border);
-  margin: 3rem auto;
-}
-
+/* =========================
+   PORTRAIT BLOCK — STARTSEITE
+   ========================= */
 .portrait-block {
   max-width: 640px;
   margin: 0 auto;
@@ -184,6 +222,9 @@ nav {
   line-height: 1.6;
 }
 
+/* =========================
+   STUDIO BLOCK — STARTSEITE
+   ========================= */
 .studio-block {
   max-width: 640px;
   margin: 1.5rem auto 0;
@@ -215,6 +256,9 @@ nav {
   white-space: nowrap;
 }
 
+/* =========================
+   KARTEN — STARTSEITE
+   ========================= */
 .karten-wrap {
   max-width: 640px;
   margin: 3rem auto 0;
@@ -259,45 +303,15 @@ nav {
 .karte-3 { border-top: 2px solid #7ecece; }
 .karte-4 { border-top: 2px solid #f5d44a; }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 12px;
-  color: var(--text);
-  border-top: 0.5px solid var(--border);
-}
-
-footer a {
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 0.5px solid var(--border);
-}
-
-.hero-text-top {
-  position: absolute;
-  top: 5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Lora', serif;
-  font-style: italic;
-  font-size: 28px;
-  color: #d4882a;
-  text-shadow: 0 1px 10px rgba(255,255,255,0.4);
-  white-space: nowrap;
-}
-
-.hero-vogel {
-  position: absolute;
-  top: 4rem;
-  right: 5%;
-  width: 60px;
-  opacity: 0.85;
-}
+/* =========================
+   KENNENLERNEN
+   ========================= */
 .kennenlernen {
   max-width: 640px;
   margin: 0 auto 3rem;
-  padding: 0 2rem;
+  padding: 2rem;
   text-align: center;
+  border-top: 0.5px solid var(--border);
 }
 
 .kennenlernen p {
@@ -318,9 +332,136 @@ footer a {
   transition: opacity 0.2s;
 }
 
-.kennenlernen a:hover {
-  opacity: 0.7;
+.kennenlernen a:hover { opacity: 0.7; }
+
+/* =========================
+   DIVIDER
+   ========================= */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem auto;
 }
+
+.divider-soft {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 2.5rem 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 12px;
+  color: var(--text);
+  border-top: 0.5px solid var(--border);
+}
+
+footer a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border);
+  transition: opacity 0.2s;
+}
+
+footer a:hover { opacity: 0.7; }
+
+/* =========================
+   RESONANZRAUM — IMPULSE KARTEN
+   ========================= */
+.impulse-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.impuls-karte {
+  background: rgba(255,255,255,0.5);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border-top: 2px solid var(--tuerkis);
+}
+
+.impuls-karte h3 {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.75rem;
+}
+
+.impuls-karte p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* =========================
+   RESONANZRAUM — BLOG KARTEN
+   ========================= */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 1.5rem;
+}
+
+.blog-karte {
+  background: rgba(255,255,255,0.5);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.blog-karte:hover { background: rgba(255,255,255,0.8); }
+
+.blog-karte h3 {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.5rem;
+}
+
+.blog-karte p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.blog-karte-1 { border-top: 2px solid var(--rosa); }
+.blog-karte-2 { border-top: 2px solid var(--tuerkis); }
+
+.inspirierende-beitraege {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 3rem;
+}
+
+.inspirierende-beitraege a {
+  color: var(--rosa);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--rosa);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.inspirierende-beitraege a:hover { opacity: 0.7; }
+
+/* =========================
+   MOBILE
+   ========================= */
 @media (max-width: 600px) {
   .nav-links {
     gap: 0.75rem;
@@ -328,10 +469,18 @@ footer a {
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .hero-img-wrap { height: 50vh; }
-  .hero-text-overlay { font-size: 24px; }
+  .hero-text-top { font-size: 18px; }
+  .hero-text-overlay { font-size: 22px; bottom: 4rem; }
   .hero-content { padding: 3rem 1.5rem 2rem; }
   .hero-content .fliesstext { font-size: 18px; }
+  .hero-content .subline { font-size: 20px; }
+  .hero-content .fliesstext .pippi { font-size: 20px; }
+  .hero-content .fliesstext .sayyess { font-size: 20px; }
+  .freche-zeile { font-size: 18px; white-space: normal; }
   .karten-wrap { grid-template-columns: 1fr; }
   .portrait-block { flex-direction: column; align-items: flex-start; }
+  .impulse-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
 }
