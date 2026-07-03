@@ -1,315 +1,337 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Datenschutz · Sinnwärts Studio</title>
-  <meta name="description" content="Datenschutzerklärung – Informationen zur Verarbeitung personenbezogener Daten auf Sinnwärts Studio.">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .wrap {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 4rem 2rem 5rem;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
 
-    .wrap h1 {
-      font-family: 'Lora', serif;
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 400;
-      color: var(--heading);
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
-    }
+:root {
+  --bg-1: #f8f4ee;
+  --bg-2: #fce8ec;
+  --bg-3: #f0ecf8;
+  --bg-4: #e8f4f4;
+  --bg-5: #f0f8ec;
+  --rosa: #b85870;
+  --tuerkis: #3a8888;
+  --lila: #7858a0;
+  --gelb: #c8a020;
+  --text: #4a3840;
+  --heading: #201828;
+  --border: rgba(180,120,140,0.2);
+}
 
-    .wrap h2 {
-      font-family: 'Lora', serif;
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--heading);
-      margin: 2.5rem 0 0.75rem;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .wrap p {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 17px;
-      line-height: 1.9;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(170deg,
+    var(--bg-1) 0%,
+    var(--bg-2) 20%,
+    var(--bg-1) 40%,
+    var(--bg-3) 60%,
+    var(--bg-4) 80%,
+    var(--bg-5) 100%
+  );
+  min-height: 100vh;
+  color: var(--text);
+}
 
-    .wrap a {
-      color: var(--rosa);
-      text-decoration: none;
-      border-bottom: 0.5px solid var(--rosa);
-      padding-bottom: 1px;
-      transition: opacity 0.2s;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: rgba(248,244,238,0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 0.5px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    .wrap a:hover { opacity: 0.7; }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
 
-    .zurueck {
-      display: inline-block;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 14px;
-      color: var(--tuerkis);
-      text-decoration: none;
-      border-bottom: none;
-      margin-bottom: 2.5rem;
-      opacity: 0.8;
-      transition: opacity 0.2s;
-    }
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
 
-    .zurueck:hover { opacity: 1; }
+.nav-links a:hover { color: var(--rosa); }
 
-    .stand {
-      margin-top: 1.5rem;
-      font-size: 14px;
-      opacity: 0.7;
-    }
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
 
-    .divider-soft {
-      width: 40px;
-      height: 1px;
-      background: var(--border);
-      margin: 2.5rem 0;
-    }
-  </style>
-</head>
-<body>
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Start</a></li>
-      <li><a href="uebermich.html">Über mich</a></li>
-      <li><a href="begleitung.html">Begleitung</a></li>
-      <li><a href="resonanzraum.html">Resonanzraum</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-  </nav>
+.hero-text-overlay {
+  position: absolute;
+  bottom: 15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: #d4882a;
+  text-shadow: 0 1px 10px rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
 
-  <div class="wrap">
+.hero-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 5rem 2rem 2rem;
+  text-align: center;
+}
 
-    <a href="index.html" class="zurueck">← zurück zur Startseite</a>
+.hero-content h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 400;
+  color: #7a4a38;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
 
-    <h1>Datenschutzerklärung</h1>
+.hero-content .subline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--rosa);
+  margin-bottom: 3rem;
+}
 
-    <div class="divider-soft"></div>
+.hero-content .fliesstext {
+  font-size: 21px;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-    <!-- 1. Verantwortlicher -->
+.hero-content .fliesstext p {
+  margin-bottom: 1.25rem;
+}
 
-    <h2>1. Verantwortlicher</h2>
-    <p>
-      Verantwortlich für die Datenverarbeitung auf dieser Website:<br><br>
-      Sinnwärts Studio<br>
-      Ove Krüger<br>
-      Öjendorfer Höhe 33D<br>
-      22117 Hamburg<br>
-      E-Mail: <a href="mailto:ovecoaching@icloud.com">ovecoaching@icloud.com</a>
-    </p>
+.hero-content .fliesstext .pippi {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--tuerkis);
+  margin-top: 0.5rem;
+}
+.hero-content .fliesstext .sayyess {
+  color: #d4882a;
+  font-size: 26px;
+}
 
-    <!-- 2. Allgemeines & SSL -->
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem auto;
+}
 
-    <h2>2. Allgemeines zur Datenverarbeitung</h2>
-    <p>
-      Der Schutz deiner persönlichen Daten ist mir wichtig.
-      Personenbezogene Daten werden auf dieser Website nur im technisch
-      notwendigen Umfang und im Einklang mit der Datenschutz-Grundverordnung
-      (DSGVO) sowie dem Bundesdatenschutzgesetz (BDSG) verarbeitet.
-    </p>
-    <p>
-      Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung.
-      Eine verschlüsselte Verbindung erkennst du daran, dass die Adresszeile
-      des Browsers von „http://" auf „https://" wechselt und ein Schloss-Symbol
-      angezeigt wird. Bei aktivierter Verschlüsselung können die Daten, die du
-      an mich übermittelst, nicht von Dritten mitgelesen werden.
-    </p>
+.portrait-block {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem;
+}
 
-    <!-- 3. Hosting -->
+.portrait-block img.portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 0.5px solid var(--border);
+}
 
-    <h2>3. Hosting – GitHub Pages</h2>
-    <p>
-      Diese Website wird über GitHub Pages bereitgestellt, einen Dienst der
-      GitHub Inc. (88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA),
-      einem Tochterunternehmen der Microsoft Corporation.
-    </p>
-    <p>
-      Beim Aufruf dieser Website erhebt GitHub automatisch technische
-      Informationen in sogenannten Server-Logfiles. Dazu gehören: deine
-      IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite,
-      Browsertyp und Betriebssystem sowie die zuvor besuchte Seite (Referrer-URL).
-    </p>
-    <p>
-      Da GitHub Inc. in den USA ansässig ist, werden Daten in ein Drittland
-      übermittelt. GitHub bzw. Microsoft ist unter dem EU-US Data Privacy
-      Framework (DPF) zertifiziert, das seit dem Angemessenheitsbeschluss der
-      EU-Kommission vom 10. Juli 2023 als Rechtsgrundlage für den Datentransfer
-      in die USA dient. Ergänzend gelten die EU-Standardvertragsklauseln (SCC).
-      Weitere Informationen findest du in der
-      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
-         target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.
-    </p>
-    <p>
-      Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
-      der sicheren und zuverlässigen Bereitstellung der Website).
-    </p>
+.siegel-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
 
-    <!-- 4. Kontaktformular -->
+.portrait-block img.siegel {
+  width: 120px;
+  height: auto;
+  transition: opacity 0.2s;
+}
 
-    <h2>4. Kontaktformular – Formspree</h2>
-    <p>
-      Das Kontaktformular auf dieser Website wird über den Dienst Formspree
-      verarbeitet (Formspree Inc., USA). Wenn du das Formular nutzt, werden
-      deine Angaben (Name, E-Mail-Adresse, Nachricht) an Formspree übermittelt
-      und von dort an meine E-Mail-Adresse weitergeleitet.
-    </p>
-    <p>
-      Deine Daten werden ausschließlich zur Bearbeitung deiner Anfrage
-      verwendet und nicht an weitere Dritte weitergegeben. Die Daten werden
-      gelöscht, sobald deine Anfrage abschließend bearbeitet wurde, es sei
-      denn, gesetzliche Aufbewahrungspflichten stehen dem entgegen.
-    </p>
-    <p>
-      Da Formspree Inc. in den USA ansässig ist, werden Daten in ein Drittland
-      übermittelt. Formspree hat sich zur Einhaltung der EU-Standardvertragsklauseln
-      (SCC) verpflichtet. Weitere Informationen:
-      <a href="https://formspree.io/legal/privacy-policy/"
-         target="_blank" rel="noopener">Datenschutzerklärung von Formspree</a>.
-    </p>
-    <p>
-      Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bearbeitung deiner Anfrage
-      im Rahmen vorvertraglicher Maßnahmen).
-    </p>
+.portrait-block img.siegel:hover { opacity: 0.8; }
 
-    <!-- 5. E-Mail-Kontakt -->
+.siegel-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
 
-    <h2>5. Kontaktaufnahme per E-Mail</h2>
-    <p>
-      Wenn du per E-Mail mit mir in Kontakt trittst, werden deine Angaben
-      (E-Mail-Adresse, Name, Inhalt der Nachricht) zur Bearbeitung deiner
-      Anfrage gespeichert. Diese Daten werden nicht an Dritte weitergegeben.
-    </p>
-    <p>
-      Die Daten werden gelöscht, sobald sie für den Zweck der Verarbeitung
-      nicht mehr erforderlich sind – in der Regel nach abschließender Bearbeitung
-      deiner Anfrage, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.
-    </p>
-    <p>
-      Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
-      der Beantwortung von Anfragen) bzw. Art. 6 Abs. 1 lit. b DSGVO, sofern
-      deine Anfrage auf den Abschluss eines Vertrags abzielt.
-    </p>
+.studio-block {
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  padding: 0 2rem;
+}
 
-    <!-- 6. Cookies -->
+.studio-block h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.25rem;
+}
 
-    <h2>6. Cookies</h2>
-    <p>
-      Diese Website verwendet keine Cookies – weder technisch notwendige noch
-      solche zu Analyse- oder Marketingzwecken. Beim Besuch dieser Website werden
-      keine Informationen in deinem Browser gespeichert.
-    </p>
+.studio-block .name {
+  font-size: 15px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
 
-    <!-- 7. Analyse-Tools und Tracking -->
+.freche-zeile {
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  padding: 0 2rem;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--tuerkis);
+  white-space: nowrap;
+}
 
-    <h2>7. Analyse-Tools und Tracking</h2>
-    <p>
-      Diese Website verwendet kein Google Analytics und keine vergleichbaren
-      Tracking- oder Analyse-Tools. Es findet kein verhaltensbasiertes Tracking
-      statt. Es werden keine Profile über dein Nutzungsverhalten erstellt.
-    </p>
+.karten-wrap {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  padding: 0 2rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
 
-    <!-- 8. Einsatz von KI-Werkzeugen -->
+.karte {
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 0.5px solid var(--border);
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+}
 
-    <h2>8. Einsatz von KI-Werkzeugen</h2>
-    <p>
-      Für die Erstellung von Texten und Konzepten sowie für die technische
-      Entwicklung dieser Website nutze ich KI-gestützte Werkzeuge, insbesondere
-      Claude (Anthropic PBC, USA). Diese Tools werden ausschließlich für interne
-      Arbeitsprozesse verwendet. Personenbezogene Daten von Website-Besuchern
-      oder Klienten werden dabei nicht an KI-Dienste übermittelt oder dort
-      verarbeitet.
-    </p>
-    <p>
-      Einzelne Bildinhalte auf dieser Website wurden mithilfe von KI-Bildgeneratoren
-      erstellt und sind als solche gekennzeichnet.
-    </p>
+.karte h3 {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.5rem;
+}
 
-    <!-- 9. Deine Rechte -->
+.karte h3 a {
+  color: var(--heading);
+  text-decoration: none;
+  transition: color 0.2s;
+}
 
-    <h2>9. Deine Rechte</h2>
-    <p>
-      Du hast gegenüber dem Verantwortlichen folgende Rechte hinsichtlich
-      deiner personenbezogenen Daten:
-    </p>
-    <p>
-      Recht auf Auskunft (Art. 15 DSGVO) – du kannst jederzeit eine Bestätigung
-      darüber verlangen, ob und welche personenbezogenen Daten von dir
-      verarbeitet werden.
-    </p>
-    <p>
-      Recht auf Berichtigung (Art. 16 DSGVO) – du kannst die Berichtigung
-      unrichtiger Daten verlangen.
-    </p>
-    <p>
-      Recht auf Löschung (Art. 17 DSGVO) – du kannst die Löschung deiner
-      Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten
-      entgegenstehen.
-    </p>
-    <p>
-      Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO) – du kannst
-      unter bestimmten Voraussetzungen verlangen, dass die Verarbeitung
-      deiner Daten eingeschränkt wird.
-    </p>
-    <p>
-      Recht auf Datenübertragbarkeit (Art. 20 DSGVO) – du kannst verlangen,
-      dass dir deine Daten in einem strukturierten, gängigen und
-      maschinenlesbaren Format übermittelt werden.
-    </p>
-    <p>
-      Widerspruchsrecht (Art. 21 DSGVO) – du hast das Recht, jederzeit gegen
-      die Verarbeitung deiner personenbezogenen Daten Widerspruch einzulegen,
-      sofern die Verarbeitung auf Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
-      Interesse) beruht. Legst du Widerspruch ein, werden deine Daten nicht
-      mehr verarbeitet, es sei denn, es liegen zwingende schutzwürdige Gründe
-      vor, die deine Interessen überwiegen.
-    </p>
+.karte h3 a:hover { color: var(--rosa); }
 
-    <!-- 10. Aufsichtsbehörde -->
+.karte p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+}
 
-    <h2>10. Beschwerderecht bei der Aufsichtsbehörde</h2>
-    <p>
-      Wenn du der Ansicht bist, dass die Verarbeitung deiner personenbezogenen
-      Daten gegen die DSGVO verstößt, hast du das Recht auf Beschwerde bei
-      einer Datenschutzaufsichtsbehörde. Die für mich zuständige
-      Aufsichtsbehörde ist:
-    </p>
-    <p>
-      Der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit<br>
-      Ludwig-Erhard-Str. 22, 7. OG<br>
-      20459 Hamburg<br>
-      Telefon: 040 / 428 54 – 4040<br>
-      E-Mail: mailbox@datenschutz.hamburg.de<br>
-      <a href="https://datenschutz-hamburg.de" target="_blank" rel="noopener">datenschutz-hamburg.de</a>
-    </p>
+.karte-1 { border-top: 2px solid #f2a4a8; }
+.karte-2 { border-top: 2px solid #c4a8d8; }
+.karte-3 { border-top: 2px solid #7ecece; }
+.karte-4 { border-top: 2px solid #f5d44a; }
 
-    <!-- 11. Aktualität -->
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 12px;
+  color: var(--text);
+  border-top: 0.5px solid var(--border);
+}
 
-    <h2>11. Aktualität dieser Datenschutzerklärung</h2>
-    <p>
-      Diese Datenschutzerklärung wird bei Bedarf angepasst, um sie an
-      geänderte Funktionen der Website oder geänderte rechtliche Anforderungen
-      anzupassen. Die jeweils aktuelle Fassung gilt ab dem angegebenen Stand.
-    </p>
+footer a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border);
+}
 
-    <p class="stand">Stand: Juli 2026</p>
+.hero-text-top {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #d4882a;
+  text-shadow: 0 1px 10px rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
 
-  </div>
+.hero-vogel {
+  position: absolute;
+  top: 4rem;
+  right: 5%;
+  width: 60px;
+  opacity: 0.85;
+}
+.kennenlernen {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  text-align: center;
+}
 
-  <footer>
-    © 2026 Ove Krüger · Sinnwärts Studio ·
-    <a href="impressum.html">Impressum</a> ·
-    <a href="datenschutz.html">Datenschutz</a>
-  </footer>
+.kennenlernen p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
 
-</body>
-</html>
+.kennenlernen a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--rosa);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--rosa);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.kennenlernen a:hover {
+  opacity: 0.7;
+}
+@media (max-width: 600px) {
+  .nav-links {
+    gap: 0.75rem;
+    font-size: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-img-wrap { height: 50vh; }
+  .hero-text-overlay { font-size: 24px; }
+  .hero-content { padding: 3rem 1.5rem 2rem; }
+  .hero-content .fliesstext { font-size: 18px; }
+  .karten-wrap { grid-template-columns: 1fr; }
+  .portrait-block { flex-direction: column; align-items: flex-start; }
+}
