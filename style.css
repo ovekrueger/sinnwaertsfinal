@@ -484,7 +484,13 @@ footer a:hover { opacity: 0.7; }
   .impulse-grid { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; }
 }
-.ki-hinweis {
+
+/* =========================
+   KI-BILD-BADGE (kleiner Hinweis auf Fotos)
+   Eigener Name, damit er NICHT mit dem
+   .ki-hinweis Disclaimer-Absatz kollidiert
+   ========================= */
+.ki-bild-badge {
   position: absolute;
   bottom: 12px;
   right: 12px;
