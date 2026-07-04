@@ -148,6 +148,7 @@
       border-radius: 12px;
       overflow: hidden;
       border: 0.5px solid var(--border);
+      position: relative;
     }
 
     .android-block img {
@@ -166,6 +167,7 @@
     .portrait-85 {
       margin: 2rem 0;
       text-align: center;
+      position: relative;
     }
 
     .portrait-85 img {
@@ -195,6 +197,8 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Großer Disclaimer-Absatz am Seitenende — eigener Name,
+       kollidiert nicht mehr mit dem Foto-Badge (.ki-bild-badge) */
     .ki-hinweis {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 13px;
@@ -296,7 +300,7 @@
 
     <figure class="android-block">
       <img src="images/ki-android.jpg" alt="Androider Kopf mit kreisenden Rechenprozessen – KI-generiert">
-      <p class="ki-hinweis">KI-generiertes Bild</p>
+      <p class="ki-bild-badge">KI-generiertes Bild</p>
       <figcaption>KI-generiert</figcaption>
     </figure>
 
@@ -320,7 +324,7 @@
 
     <figure class="portrait-85">
       <img src="images/ove-85.-portrait.png" alt="Ove als 85-jähriger Referenzpunkt – KI-generiert">
-      <p class="ki-hinweis">KI-generiertes Bild</p>
+      <p class="ki-bild-badge">KI-generiertes Bild</p>
       <figcaption>KI-generiert · Mein innerer Referenzpunkt</figcaption>
     </figure>
 
