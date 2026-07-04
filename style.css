@@ -498,3 +498,19 @@ footer a:hover { opacity: 0.7; }
   text-align: center;
   margin-top: 0.5rem;
 }
+
+/* Für Hero-Bilder (voller Bildbereich, kein Platz darunter) */
+.ki-hero-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 8px;
+  border-radius: 4px;
+  opacity: 0.85;
+  z-index: 5;
+  margin: 0;
+}
