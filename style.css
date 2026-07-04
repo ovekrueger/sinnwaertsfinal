@@ -491,15 +491,10 @@ footer a:hover { opacity: 0.7; }
    .ki-hinweis Disclaimer-Absatz kollidiert
    ========================= */
 .ki-bild-badge {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  font-size: 0.7rem;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.35);
-  padding: 2px 8px;
-  border-radius: 4px;
-  opacity: 0.85;
-  z-index: 5;
-  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text);
+  opacity: 0.55;
+  text-align: center;
+  margin-top: 0.5rem;
 }
