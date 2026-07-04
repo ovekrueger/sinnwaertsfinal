@@ -148,7 +148,6 @@
       border-radius: 12px;
       overflow: hidden;
       border: 0.5px solid var(--border);
-      position: relative;
     }
 
     .android-block img {
@@ -167,12 +166,18 @@
     .portrait-85 {
       margin: 2rem 0;
       text-align: center;
+    }
+
+    .portrait-85 .img-frame {
       position: relative;
+      display: inline-block;
+      max-width: 300px;
+      width: 100%;
     }
 
     .portrait-85 img {
-      max-width: 300px;
       width: 100%;
+      display: block;
       border-radius: 8px;
       border: 0.5px solid var(--border);
     }
