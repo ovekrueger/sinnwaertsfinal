@@ -86,7 +86,7 @@ nav {
    ========================= */
 @keyframes ozean-atmen {
   0%   { transform: scale(1.0); }
-  50%  { transform: scale(1.15); }
+  50%  { transform: scale(1.08); }
   100% { transform: scale(1.0); }
 }
 
@@ -95,7 +95,7 @@ nav {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  animation: ozean-atmen 4s ease-in-out infinite;
+  animation: ozean-atmen 9s ease-in-out infinite;
   will-change: transform;
 }
 
