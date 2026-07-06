@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -53,17 +52,26 @@
       transform: translateX(-50%);
       font-family: 'Lora', serif;
       font-style: italic;
-      font-size: 15px;
+      font-size: 16px;
       color: white;
-      opacity: 0.8;
+      opacity: 0.85;
       cursor: pointer;
       text-shadow: 0 1px 8px rgba(0,0,0,0.35);
       transition: opacity 0.3s;
       user-select: none;
       z-index: 6;
+      animation: klang-einladung-atem 6s ease-in-out infinite;
     }
 
-    .klang-einladung:hover { opacity: 1; }
+    @keyframes klang-einladung-atem {
+      0%, 100% { opacity: 0.65; }
+      50%      { opacity: 1; }
+    }
+
+    .klang-einladung:hover {
+      opacity: 1;
+      animation-play-state: paused;
+    }
 
     @keyframes klang-puls {
       0%   { transform: scale(1.0); }
@@ -74,6 +82,17 @@
     .hero-resonanz.klingt img {
       animation: klang-puls 5s ease-in-out infinite;
       will-change: transform;
+    }
+
+    @keyframes klang-text-puls {
+      0%, 100% { opacity: 0.75; }
+      50%      { opacity: 1; }
+    }
+
+    .hero-resonanz.klingt .klang-einladung {
+      font-size: 19px;
+      letter-spacing: 0.02em;
+      animation: klang-text-puls 5s ease-in-out infinite;
     }
 
     .wrap {
