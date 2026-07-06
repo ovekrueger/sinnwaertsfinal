@@ -52,25 +52,25 @@
       transform: translateX(-50%);
       font-family: 'Lora', serif;
       font-style: italic;
-      font-size: 16px;
+      font-size: 19px;
       color: white;
-      opacity: 0.85;
       cursor: pointer;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.45);
       transition: opacity 0.3s;
       user-select: none;
       z-index: 6;
-      animation: klang-einladung-atem 6s ease-in-out infinite;
+      animation: klang-einladung-farbpuls 6s ease-in-out infinite;
     }
 
-    @keyframes klang-einladung-atem {
-      0%, 100% { opacity: 0.65; }
-      50%      { opacity: 1; }
+    @keyframes klang-einladung-farbpuls {
+      0%, 100% { color: #ffffff; opacity: 0.85; }
+      50%      { color: var(--rosa); opacity: 1; }
     }
 
     .klang-einladung:hover {
       opacity: 1;
       animation-play-state: paused;
+      color: var(--rosa);
     }
 
     @keyframes klang-puls {
