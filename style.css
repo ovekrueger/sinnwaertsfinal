@@ -85,9 +85,9 @@ nav {
    HERO — SANFTE WELLENBEWEGUNG
    ========================= */
 @keyframes ozean-atmen {
-  0%   { transform: scale(1.03) translateY(0px); }
-  50%  { transform: scale(1.05) translateY(-4px); }
-  100% { transform: scale(1.03) translateY(0px); }
+  0%   { transform: scale(1.03) translateY(1.0px); }
+  50%  { transform: scale(1.05) translateY(1.15px); }
+  100% { transform: scale(1.03) translateY(1.0px); }
 }
 
 .hero-img-wrap img {
