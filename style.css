@@ -82,12 +82,12 @@ nav {
 }
 
 /* =========================
-   HERO — SANFTE WELLENBEWEGUNG
+   HERO — SANFTE WELLENBEWEGUNG (TEST-VERSION, deutlich übertrieben)
    ========================= */
 @keyframes ozean-atmen {
-  0%   { transform: scale(1.03) translateY(1.0px); }
-  50%  { transform: scale(1.05) translateY(1.15px); }
-  100% { transform: scale(1.03) translateY(1.0px); }
+  0%   { transform: scale(1.0); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1.0); }
 }
 
 .hero-img-wrap img {
@@ -95,7 +95,7 @@ nav {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  animation: ozean-atmen 12s ease-in-out infinite;
+  animation: ozean-atmen 4s ease-in-out infinite;
   will-change: transform;
 }
 
