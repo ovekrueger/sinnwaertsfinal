@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -28,6 +29,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+      cursor: pointer;
     }
 
     .hero-resonanz-text {
@@ -42,6 +44,36 @@
       text-shadow: 0 1px 12px rgba(0,100,100,0.4);
       white-space: nowrap;
       text-align: center;
+    }
+
+    .klang-einladung {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: white;
+      opacity: 0.8;
+      cursor: pointer;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+      transition: opacity 0.3s;
+      user-select: none;
+      z-index: 6;
+    }
+
+    .klang-einladung:hover { opacity: 1; }
+
+    @keyframes klang-puls {
+      0%   { transform: scale(1.0); }
+      50%  { transform: scale(1.035); }
+      100% { transform: scale(1.0); }
+    }
+
+    .hero-resonanz.klingt img {
+      animation: klang-puls 5s ease-in-out infinite;
+      will-change: transform;
     }
 
     .wrap {
@@ -224,6 +256,7 @@
     @media (max-width: 600px) {
       .hero-resonanz { height: 50vh; }
       .hero-resonanz-text { font-size: 20px; white-space: normal; width: 90%; }
+      .klang-einladung { font-size: 13px; }
       .impulse-grid { grid-template-columns: 1fr; }
       .blog-grid { grid-template-columns: 1fr; }
     }
@@ -241,10 +274,12 @@
     </ul>
   </nav>
 
-  <div class="hero-resonanz">
-    <img src="images/resonanz-klang-blau.jpg" alt="Klangschale im Sand">
-   <p class="ki-hero-badge">KI-generiertes Bild</p>
+  <div class="hero-resonanz" id="klangschale-wrap">
+    <img id="klangschale-bild" src="images/resonanz-klang-blau.jpg" alt="Klangschale im Sand – zum Klingen anklickbar" role="button" tabindex="0" aria-label="Klangschale antippen, um sie klingen zu lassen">
+    <p class="ki-hero-badge">KI-generiertes Bild</p>
     <div class="hero-resonanz-text">Was klingt in dir –</div>
+    <p class="klang-einladung" id="klang-einladung">Lass sie klingen.</p>
+    <audio id="klangschale-audio" src="klangschale.mp3" preload="none"></audio>
   </div>
 
   <div class="wrap">
@@ -339,6 +374,41 @@
     <a href="impressum.html">Impressum</a> ·
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
+
+  <script>
+    (function () {
+      const bild = document.getElementById('klangschale-bild');
+      const einladung = document.getElementById('klang-einladung');
+      const audio = document.getElementById('klangschale-audio');
+      const wrap = document.getElementById('klangschale-wrap');
+
+      function klingen() {
+        if (!audio.paused) return; // schon am klingen, nicht überlappen
+        audio.currentTime = 0;
+        audio.play().catch(function () {
+          // Falls der Browser Autoplay-Regeln greift, still bleiben
+        });
+        wrap.classList.add('klingt');
+        einladung.textContent = 'Sie klingt …';
+      }
+
+      audio.addEventListener('ended', function () {
+        wrap.classList.remove('klingt');
+        einladung.textContent = 'Lass sie klingen.';
+      });
+
+      bild.addEventListener('click', klingen);
+      einladung.addEventListener('click', klingen);
+
+      // Zugänglichkeit: auch per Tastatur (Enter/Leertaste) auslösbar
+      bild.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          klingen();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
