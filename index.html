@@ -48,8 +48,8 @@
     </ul>
   </nav>
 
-  <div class="hero-img-wrap">
-    <img src="images/pastel-meer.jpg" alt="Weites Meer im Pastelllicht">
+ <div class="hero-img-wrap">
+    <img id="meer-bild" src="images/pastel-meer.jpg" alt="Weites Meer im Pastelllicht" style="cursor:pointer;">
     <p class="ki-hero-badge">KI-generiertes Bild</p>
     <div class="hero-text-top">Flieg, Schmetterling, flieg.</div>
     <svg class="hero-vogel" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
@@ -57,10 +57,11 @@
             stroke="#d4882a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
     </svg>
     <div class="hero-text-overlay">Da ist noch mehr.</div>
+    <audio id="meer-audio" src="start_wellen.mp3" loop preload="none"></audio>
   </div>
 
   <div class="hero-content">
-    <p class="atem-einladung">Ein Atemzug. Dann weiter.</p>
+    <p class="atem-einladung" id="atem-einladung">Atme mit dem Meer.</p>
     <h1>Ich war schon da,<br>wo du gerade steckst.</h1>
     <p class="subline">Hier darf es langsamer werden.</p>
     <div class="fliesstext">
@@ -126,5 +127,35 @@
     <a href="impressum.html">Impressum</a> ·
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
+  <script>
+    (function () {
+      const bild = document.getElementById('meer-bild');
+      const einladung = document.getElementById('atem-einladung');
+      const audio = document.getElementById('meer-audio');
+
+      function toggleMeer() {
+        if (audio.paused) {
+          audio.play().catch(function () {});
+          einladung.textContent = 'Es trägt …';
+        } else {
+          audio.pause();
+          einladung.textContent = 'Atme mit dem Meer.';
+        }
+      }
+
+      bild.addEventListener('click', toggleMeer);
+      einladung.addEventListener('click', toggleMeer);
+
+      bild.setAttribute('role', 'button');
+      bild.setAttribute('tabindex', '0');
+      bild.setAttribute('aria-label', 'Meeresklang starten oder stoppen');
+      bild.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMeer();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
