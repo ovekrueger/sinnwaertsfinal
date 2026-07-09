@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://sinnwaerts-studio.de/begleitung.html">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Begleitung · Sinnwärts Studio">
-<meta property="og:description" content="Individuelle Begleitung – klar, regulativ, ohne Druck. Erstgespräch kostenlos.">
-<meta property="og:image" content="https://sinnwaerts-studio.de/images/pastel-meer.jpg">
-<meta property="og:url" content="https://sinnwaerts-studio.de/begleitung.html">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="de_DE">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Begleitung · Sinnwärts Studio">
+  <meta property="og:description" content="Individuelle Begleitung – klar, regulativ, ohne Druck. Erstgespräch kostenlos.">
+  <meta property="og:image" content="https://sinnwaerts-studio.de/images/pastel-meer.jpg">
+  <meta property="og:url" content="https://sinnwaerts-studio.de/begleitung.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+
   <title>Begleitung · Sinnwärts Studio</title>
   <meta name="description" content="Begleitung bei Sinnwärts Studio – klar, regulativ, ohne Druck.">
   <link rel="stylesheet" href="style.css">
@@ -96,6 +97,7 @@
       margin: 2.5rem 0;
     }
 
+    /* --- Format-Blöcke --- */
     .format-block {
       background: rgba(255,255,255,0.5);
       border: 0.5px solid var(--border);
@@ -122,41 +124,69 @@
       margin-top: 0.5rem;
     }
 
-    .hinweis-box {
-      background: rgba(255,255,255,0.4);
-      border: 0.5px solid var(--border);
-      border-left: 2px solid var(--rosa);
-      border-radius: 0 8px 8px 0;
-      padding: 1.25rem 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .hinweis-box p {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .ki-box {
-      background: rgba(255,255,255,0.4);
-      border: 0.5px solid var(--border);
-      border-left: 2px solid var(--tuerkis);
-      border-radius: 0 8px 8px 0;
-      padding: 1.5rem 1.75rem;
-      margin: 2rem 0;
-    }
-
-    .ki-box h3 {
-      margin-top: 0;
+    .format-tag {
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--tuerkis);
+      background: rgba(var(--tuerkis-rgb, 0,180,180), 0.08);
+      border: 0.5px solid var(--tuerkis);
+      border-radius: 20px;
+      padding: 2px 10px;
       margin-bottom: 0.75rem;
     }
 
-    .ki-box p {
-      font-size: 16px;
-      margin-bottom: 0.75rem;
+    .format-block:nth-child(even) .format-tag {
+      color: var(--rosa);
+      border-color: var(--rosa);
+      background: rgba(var(--rosa-rgb, 220,150,150), 0.08);
     }
 
-    .ki-box p:last-child {
-      margin-bottom: 0;
+    /* --- Einstieg-Übersicht --- */
+    .einstieg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .einstieg-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .einstieg-card {
+      background: rgba(255,255,255,0.4);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .einstieg-card .e-title {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      color: var(--heading);
+      margin-bottom: 0.35rem;
+    }
+
+    .einstieg-card .e-preis {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      color: var(--tuerkis);
+      font-weight: 400;
+    }
+
+    .einstieg-card .e-sub {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      opacity: 0.7;
+      margin-top: 0.25rem;
     }
 
     /* --- Preisstruktur --- */
@@ -184,6 +214,68 @@
       color: var(--heading);
       white-space: nowrap;
       margin-left: 1rem;
+    }
+
+    /* --- Hinweis-Boxen --- */
+    .hinweis-box {
+      background: rgba(255,255,255,0.4);
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--rosa);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .hinweis-box p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .garantie-box {
+      background: rgba(255,255,255,0.4);
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--tuerkis);
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+
+    .garantie-box h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      color: var(--tuerkis);
+    }
+
+    .garantie-box p {
+      font-size: 16px;
+      margin-bottom: 0.75rem;
+    }
+
+    .garantie-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .ki-box {
+      background: rgba(255,255,255,0.4);
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--tuerkis);
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+
+    .ki-box h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .ki-box p {
+      font-size: 16px;
+      margin-bottom: 0.75rem;
+    }
+
+    .ki-box p:last-child {
+      margin-bottom: 0;
     }
 
     /* --- CTA-Block unten --- */
@@ -241,8 +333,8 @@
     <p>Diese Seite ist kein Versprechen.<br>
     Sie ist eine Orientierung.</p>
 
-    <p>Ich arbeite nicht mit Programmen,<br>
-    sondern mit Menschen – im jeweiligen Kontext.</p>
+    <p>Ich arbeite nicht mit Programmen, nicht mit Konzepten.<br>
+    Sondern mit dir – im jeweiligen Kontext, in dem du gerade steckst.</p>
 
     <div class="divider-soft"></div>
 
@@ -251,34 +343,87 @@
 
     <p>Ich arbeite regulativ, systemisch und integral. Nicht mit Druck, nicht mit Optimierung, sondern mit Orientierung, Tempo und Beziehung.</p>
 
-    <p>Veränderung entsteht nicht durch Erklären allein, sondern dort, wo ein System wieder tragfähig wird.</p>
+    <p>Was du bei mir nicht bekommst: ein Programm, das du durchlaufen musst. Was du bekommst: jemanden, der wirklich versteht – aus eigener Erfahrung heraus. Jemanden, bei dem du so sein darfst wie du bist. Ohne dass das infrage gestellt wird.</p>
+
+    <p><em>Es muss gar nix.</em></p>
+
+    <div class="divider-soft"></div>
+
+    <h2>Für wen diese Arbeit passt</h2>
+    <p>Diese Begleitung passt für Menschen, die bereit sind, langsamer zu werden, Zusammenhänge zu betrachten und Verantwortung für ihr Erleben zu übernehmen.</p>
+
+    <p>Sie passt für Menschen, die wirklich – wirklich – etwas verändern wollen. Nicht als Konzept. Sondern als innere Bereitschaft.</p>
+
+    <p>Sie passt weniger für Menschen, die schnelle Lösungen, klare Anweisungen oder äußere Autorität suchen.</p>
+
+    <p><em>Nicht als Bewertung. Sondern als ehrliche Einordnung.</em></p>
+
+    <div class="divider-soft"></div>
+
+    <h2>Wie eine Zusammenarbeit beginnt</h2>
+    <p>Es gibt kein festes Muster. Jeder Mensch, der zu mir kommt, ist ein eigener Kontext. Was ich dir sagen kann: Das erste Gespräch ist kein Verkaufsgespräch. Es ist ein gegenseitiges Spüren. Passt das hier – für dich und für mich?</p>
+
+    <p>Manche Menschen öffnen sich sofort. Manche melden sich erst Wochen später. Manche merken, dass sie mit mir nichts anfangen können – und das ist genauso okay. Ich werde dir das sagen, und du darfst es mir auch sagen.</p>
+
+    <!-- Einstiegs-Übersicht -->
+    <div class="einstieg-grid">
+      <div class="einstieg-card">
+        <div class="e-title">Erstgespräch</div>
+        <div class="e-preis">kostenlos</div>
+        <div class="e-sub">Kennenlernen · gegenseitiges Spüren</div>
+      </div>
+      <div class="einstieg-card">
+        <div class="e-title">Schnupperstunde</div>
+        <div class="e-preis">50 €</div>
+        <div class="e-sub">Erstes Thema · erste Vertiefung · etwas mitnehmen</div>
+      </div>
+      <div class="einstieg-card">
+        <div class="e-title">Begleitung</div>
+        <div class="e-preis">ab 150 €</div>
+        <div class="e-sub">Einzelsession oder Wegstrecke</div>
+      </div>
+    </div>
 
     <div class="divider-soft"></div>
 
     <h2>Formate</h2>
 
     <div class="format-block">
+      <span class="format-tag">Einstieg</span>
+      <h3>Schnupperstunde</h3>
+      <p>Du hast ein konkretes Thema – und willst nicht nur reden, sondern schon einen ersten echten Schritt machen.</p>
+      <p>Wir schauen gemeinsam, was wirklich dahintersteckt. Wir gehen in die erste Vertiefung. Und du nimmst etwas Konkretes mit nach Hause – etwas, das du umsetzen kannst.</p>
+      <p>Am Ende steht eine ehrliche Frage: Spürst du etwas in dir, das weiterwill? Wenn ja, sprechen wir über den nächsten Schritt.</p>
+      <p><em>Dauer: ca. 60 Minuten · 50 €</em></p>
+    </div>
+
+    <div class="format-block">
+      <span class="format-tag">Fortlaufend</span>
       <h3>1:1 Begleitung</h3>
       <p>Offen. Kein Zeitrahmen, keine Sitzungsanzahl im Voraus.</p>
       <p>Das kann sich über eine lange Zeit erstrecken – mit Wochen dazwischen, wenn gerade nichts ansteht. Themen, die auftauchen, werden individuell angeschaut, wenn sie da sind.</p>
       <p>Ich verspreche dir keinen Prozess. Ich biete dir den Raum, der da ist, wenn du ihn brauchst.</p>
+      <p><em>150 € pro Session</em></p>
     </div>
 
     <div class="format-block">
-      <h3>Auf den Punkt</h3>
-      <p>Auf den Punkt kann ich auch.</p>
-      <p>Ein Ziel. Ein bis zwei Stunden. Klare Ausrichtung.</p>
-      <p>Erst schauen wir, ob das Ziel realistisch ist – ein kurzer Blick auf das, was schon da ist und was fehlt. Dann richten wir uns ganz auf das aus, was jetzt dran ist.</p>
-      <p><em>Beispiel: Du willst eine Entscheidung treffen, vor der du seit Wochen wegläufst – und dich trauen, zu sagen, was du dir schon lange nicht mehr getraut hast. Erst schauen wir, wie deine Situation wirklich aussieht. Dann schauen wir gemeinsam, was es dafür wirklich braucht.</em></p>
-    </div>
-
-    <div class="format-block">
+      <span class="format-tag">Zeitraum</span>
       <h3>Wegstrecke</h3>
       <p>Ein vereinbarter Zeitraum – mehrere Wochen oder Monate, mit klarem Rhythmus.</p>
       <p>Dazu gehört: regelmäßiges Feedback zwischen den Sessions. Eine abgesprochene Erreichbarkeit, wenn zwischendurch etwas hochkommt. Individuell zugeschnittene Übungen oder ein eigenes Workbook, wenn das für dich passt.</p>
-      <p>Bei Bedarf richte ich dir eine persönlich zugeschnittene KI ein – ethisch sauber und datenschutzrechtlich korrekt – als Sparringpartner, Reflexionsraum oder stille Unterstützung zwischen unseren Terminen. Kein Ersatz für die Begleitung. Eine Ergänzung, wenn sie dir hilft.</p>
+      <p>Bei Bedarf richte ich dir eine persönlich zugeschnittene KI ein – ethisch sauber und datenschutzrechtlich korrekt – als Sparringpartner oder stille Unterstützung zwischen unseren Terminen.</p>
       <p><a href="ki-sociale-medien.html">Mehr dazu, wie ich mit KI arbeite →</a></p>
       <p>Und wenn unterwegs ein neues Thema auftaucht – die Wegstrecke passt sich an. Nicht du dich an sie.</p>
+      <p><em>ab 400 € / Monat · Abrechnung monatlich</em></p>
+    </div>
+
+    <div class="format-block">
+      <span class="format-tag">Fokus</span>
+      <h3>Auf den Punkt</h3>
+      <p>Ein Ziel. Ein bis zwei Stunden. Klare Ausrichtung.</p>
+      <p>Erst schauen wir, ob das Ziel realistisch ist – ein kurzer Blick auf das, was schon da ist und was fehlt. Dann richten wir uns ganz auf das aus, was jetzt dran ist.</p>
+      <p><em>Beispiel: Du willst eine Entscheidung treffen, vor der du seit Wochen wegläufst. Erst schauen wir, wie deine Situation wirklich aussieht. Dann schauen wir gemeinsam, was es dafür wirklich braucht.</em></p>
+      <p><em>150 € · nach Bedarf, meist 1–2 Std.</em></p>
     </div>
 
     <div class="divider-soft"></div>
@@ -286,34 +431,36 @@
     <h2>Wertschätzung & Rahmen</h2>
 
     <div class="preis-item">
-      <span class="preis-label">Auf den Punkt</span>
-      <span class="preis-wert">nach Bedarf, meist 1–2 Std.</span>
+      <span class="preis-label">Erstgespräch</span>
+      <span class="preis-wert">kostenlos</span>
     </div>
-
     <div class="preis-item">
-      <span class="preis-label">Einzelsession</span>
+      <span class="preis-label">Schnupperstunde</span>
+      <span class="preis-wert">50 €</span>
+    </div>
+    <div class="preis-item">
+      <span class="preis-label">Einzelsession / Auf den Punkt</span>
       <span class="preis-wert">150 €</span>
     </div>
-
     <div class="preis-item">
       <span class="preis-label">Wegstrecke</span>
       <span class="preis-wert">ab 400 € / Monat</span>
     </div>
 
-    <div class="preis-item">
-      <span class="preis-label">Erstgespräch</span>
-      <span class="preis-wert">kostenlos</span>
+    <p style="margin-top: 1.5rem;">Wegstrecken klären wir im Gespräch. Was du brauchst, wie lange, in welchem Rhythmus – das zeigt sich. Über mehrere Sitzungen hinweg wird es günstiger pro Termin.</p>
+
+    <p>Nach dem Erstgespräch – wenn es für beide Seiten stimmt – arbeiten wir mit einem schriftlichen Vertrag. Klar, fair, verbindlich. Und: Du kannst jederzeit kündigen – auf eigenen Wunsch, mit einer kurzen Begründung. Kein Druck. Keine Falle.</p>
+
+    <div class="hinweis-box">
+      <p>Wenn du spürst, dass das hier für dich ist – und Geld gerade ein echtes Hindernis ist – sprich mich an. Daran soll es nicht scheitern.</p>
     </div>
 
-    <p style="margin-top: 1.5rem;">Wegstrecken klären wir im Gespräch. Was du brauchst, wie lange, in welchem Rhythmus – das zeigt sich. Über mehrere Sitzungen hinweg wird es günstiger pro Termin. Abgerechnet wird monatlich.</p>
-
-    <p>Das Erstgespräch ist kostenlos. Kein Verkaufsgespräch. Kein Druck. Nur: passt das hier für dich.</p>
-
-    <p>Wenn Geld gerade knapp ist – sprich mich an. Daran soll es nicht scheitern.</p>
-
-    <p>Nach dem Erstgespräch – wenn es für beide Seiten stimmt – arbeiten wir mit einem schriftlichen Vertrag. Klar, fair, verbindlich.</p>
-
-    <p>Ich gebe eine Zufriedenheitsgarantie – keine Erfolgsgarantie. Was zwischen uns entsteht, kann ich nicht versprechen. Dass du dich in diesem Prozess ernst genommen und gut aufgehoben fühlst, schon.</p>
+    <div class="garantie-box">
+      <h3>Zufriedenheitsgarantie</h3>
+      <p>Ich gebe eine Zufriedenheitsgarantie – keine Erfolgsgarantie.</p>
+      <p>Was zwischen uns entsteht, kann ich nicht versprechen. Dass du dich in diesem Prozess wirklich ernst genommen und gut aufgehoben fühlst – das schon.</p>
+      <p>Wenn das nicht der Fall ist, sprechen wir darüber. Offen. Ohne Rechtfertigung.</p>
+    </div>
 
     <div class="divider-soft"></div>
 
@@ -326,17 +473,9 @@
 
     <div class="divider-soft"></div>
 
-    <h2>Für wen diese Arbeit passt – und für wen eher nicht</h2>
-    <p>Diese Begleitung passt für Menschen, die bereit sind, langsamer zu werden, Zusammenhänge zu betrachten und Verantwortung für ihr Erleben zu übernehmen.</p>
-
-    <p>Sie passt weniger für Menschen, die schnelle Lösungen, klare Anweisungen oder äußere Autorität suchen.</p>
-
-    <p><em>Nicht als Bewertung. Sondern als ehrliche Einordnung.</em></p>
-
-    <div class="divider-soft"></div>
-
     <h2>Wenn du weitergehen möchtest</h2>
-    <p>Wenn du dich in dieser Beschreibung wiedererkennst, können wir in einem ersten Gespräch klären, ob und wie eine Zusammenarbeit sinnvoll ist.</p>
+    <p>Wenn du dich hier wiedererkennst – meld dich einfach. Kein perfekter Text nötig. Ein Hallo reicht.</p>
+    <p>Wir klären in einem ersten Gespräch, ob und wie eine Zusammenarbeit für uns beide Sinn ergibt.</p>
 
   </div>
 
@@ -353,6 +492,3 @@
 
 </body>
 </html>
-
-
-
