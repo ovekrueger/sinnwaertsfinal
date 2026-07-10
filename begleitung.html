@@ -189,6 +189,49 @@
       margin-top: 0.25rem;
     }
 
+    /* --- Was bei dir entsteht --- */
+    .wert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 560px) {
+      .wert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .wert-item {
+      background: rgba(255,255,255,0.4);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .wert-icon {
+      font-size: 14px;
+      color: var(--tuerkis);
+      margin-bottom: 0.4rem;
+      opacity: 0.6;
+    }
+
+    .wert-label {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+
+    .wert-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
     /* --- Preisstruktur --- */
     .preis-item {
       display: flex;
@@ -326,6 +369,8 @@
 
   <div class="wrap">
 
+    <p style="margin-bottom: 2rem;"><a href="index.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; color: var(--text); opacity: 0.6; text-decoration: none; border-bottom: none;">← Zurück zur Startseite</a></p>
+
     <p class="hero-satz">Immer Freund. Manchmal liebevoller Arschtreter.</p>
     <p class="hero-sub">Immer auf deiner Seite.</p>
 
@@ -349,14 +394,54 @@
 
     <div class="divider-soft"></div>
 
+    <h2>Was bei dir entstehen kann</h2>
+    <p>Kein Versprechen. Keine Garantie auf Ergebnisse. Aber das sind die Veränderungen, die ich bei Menschen beobachte, die sich wirklich auf diesen Prozess einlassen.</p>
+
+    <div class="wert-grid">
+
+      <div class="wert-item">
+        <div class="wert-icon">◎</div>
+        <div class="wert-label">Denken</div>
+        <div class="wert-text">Du erkennst, dass du nicht dein Denken bist. Du beobachtest Gedanken, statt von ihnen getrieben zu werden. Der Kopf wird vom Antreiber zum Werkzeug.</div>
+      </div>
+
+      <div class="wert-item">
+        <div class="wert-icon">◎</div>
+        <div class="wert-label">Fühlen</div>
+        <div class="wert-text">Du kommst zurück in den Körper. Du verstehst, dass unter jedem Gefühl ein Bedürfnis steckt – und dass Gefühle keine Bedrohung sind, sondern Information.</div>
+      </div>
+
+      <div class="wert-item">
+        <div class="wert-icon">◎</div>
+        <div class="wert-label">Körper</div>
+        <div class="wert-text">Bewusste Entspannung wird möglich. Das Bewusstsein für Körpersignale kehrt zurück. Der Körper hat immer schon gesprochen – du lernst wieder zuzuhören.</div>
+      </div>
+
+      <div class="wert-item">
+        <div class="wert-icon">◎</div>
+        <div class="wert-label">Beziehungen</div>
+        <div class="wert-text">Du erkennst deinen eigenen Anteil. Du hörst wirklich zu. Du setzt Grenzen aus Werten statt aus Angst. Und du siehst klarer, welche Beziehungen tragen – und welche nicht.</div>
+      </div>
+
+      <div class="wert-item">
+        <div class="wert-icon">◎</div>
+        <div class="wert-label">Selbstverhältnis</div>
+        <div class="wert-text">Milde zu dir selbst entsteht. Langsam. Selbstwert, Selbstachtung, Selbstverantwortung – nicht als Konzept, sondern als gelebte Erfahrung.</div>
+      </div>
+
+      <div class="wert-item">
+        <div class="wert-icon">◎</div>
+        <div class="wert-label">Äußeres Leben</div>
+        <div class="wert-text">Sinnhaftes, zielorientiertes Handeln wird möglich. Du erkennst, was du loslassen darfst – und was du wirklich willst. Nicht als Plan. Als innere Ausrichtung.</div>
+      </div>
+
+    </div>
+
+    <div class="divider-soft"></div>
+
     <h2>Für wen diese Arbeit passt</h2>
-    <p>Diese Begleitung passt für Menschen, die bereit sind, langsamer zu werden, Zusammenhänge zu betrachten und Verantwortung für ihr Erleben zu übernehmen.</p>
-
-    <p>Sie passt für Menschen, die wirklich – wirklich – etwas verändern wollen. Nicht als Konzept. Sondern als innere Bereitschaft.</p>
-
-    <p>Sie passt weniger für Menschen, die schnelle Lösungen, klare Anweisungen oder äußere Autorität suchen.</p>
-
-    <p><em>Nicht als Bewertung. Sondern als ehrliche Einordnung.</em></p>
+    <p>Für Menschen, die wirklich – wirklich – etwas verändern wollen. Die bereit sind, langsamer zu werden und Verantwortung für ihr Erleben zu übernehmen.</p>
+    <p>Weniger für Menschen, die schnelle Lösungen oder äußere Autorität suchen. <em>Nicht als Bewertung. Als ehrliche Einordnung.</em></p>
 
     <div class="divider-soft"></div>
 
@@ -463,19 +548,6 @@
     </div>
 
     <div class="divider-soft"></div>
-
-    <div class="ki-box">
-      <h3>KI & digitale Medien</h3>
-      <p>KI kann entlasten. Und sie kann abhängig machen.</p>
-      <p>In meiner Begleitung schaue ich auf den bewussten Umgang mit digitalen Medien und KI – nicht als Technikfrage, sondern als Haltungsfrage. Wer führt wen?</p>
-      <p>Auf Wunsch integriere ich KI als ethischen Spiegel in unsere Arbeit.</p>
-    </div>
-
-    <div class="divider-soft"></div>
-
-    <h2>Wenn du weitergehen möchtest</h2>
-    <p>Wenn du dich hier wiedererkennst – meld dich einfach. Kein perfekter Text nötig. Ein Hallo reicht.</p>
-    <p>Wir klären in einem ersten Gespräch, ob und wie eine Zusammenarbeit für uns beide Sinn ergibt.</p>
 
   </div>
 
