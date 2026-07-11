@@ -144,9 +144,19 @@
       background: rgba(220,150,150,0.08);
     }
 
+    .format-tag.premium {
+      color: var(--gelb, #c9a84c);
+      border-color: var(--gelb, #c9a84c);
+      background: rgba(201,168,76,0.08);
+    }
+
+    .format-block.premium-block {
+      border-top-color: var(--gelb, #c9a84c);
+    }
+
     .einstieg-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 0.75rem;
       margin: 1.5rem 0;
     }
@@ -163,6 +173,11 @@
       text-align: center;
     }
 
+    .einstieg-card.highlight {
+      border-color: var(--gelb, #c9a84c);
+      background: rgba(201,168,76,0.05);
+    }
+
     .einstieg-card .e-title {
       font-family: 'Lora', serif;
       font-size: 15px;
@@ -175,6 +190,10 @@
       font-size: 20px;
       color: var(--tuerkis);
       font-weight: 400;
+    }
+
+    .einstieg-card.highlight .e-preis {
+      color: var(--gelb, #c9a84c);
     }
 
     .einstieg-card .e-sub {
@@ -415,9 +434,14 @@
         <div class="e-sub">Erstes Thema · erste Vertiefung · etwas mitnehmen</div>
       </div>
       <div class="einstieg-card">
-        <div class="e-title">Begleitung</div>
+        <div class="e-title">1:1 Begleitung</div>
         <div class="e-preis">ab 150 €</div>
         <div class="e-sub">Einzelsession oder Wegstrecke</div>
+      </div>
+      <div class="einstieg-card highlight">
+        <div class="e-title">Dein Weg nach Hause</div>
+        <div class="e-preis">1.940 €</div>
+        <div class="e-sub">13 Workshops · 3–6 Monate · persönliche Begleitung</div>
       </div>
     </div>
 
@@ -463,6 +487,18 @@
       <p><em>150 € · nach Bedarf, meist 1–2 Std.</em></p>
     </div>
 
+    <div class="format-block premium-block">
+      <span class="format-tag premium">Premium</span>
+      <h3>Dein Weg nach Hause</h3>
+      <p>Ein komplettes Programm für Menschen, die nicht nur ein Thema anschauen wollen – sondern ihr Leben als Ganzes.</p>
+      <p>„Ich – Coming Home" ist das Programm, das ich selbst durchlaufen habe. Es hat mich nicht unberührt gelassen. 13 Workshops, die keinen Lebensbereich auslassen – von deiner inneren Realität über Körper, Emotionen, Beziehungen und Berufung bis hin zu Reichtum, Wirken und deiner Essenz. Weil ich den Weg selbst gegangen bin und die Kraft dieses Programms selbst erfahren habe, begleite ich dich gerne auf diese Reise.</p>
+      <p>Du absolvierst das Programm in deinem eigenen Tempo – mit Workbooks, Meditationen und allem was du brauchst. Ich begleite dich dabei: wöchentlich, persönlich, regulierend. Nicht als Erklärer. Als jemand, der mit dir schaut, was wirklich gerade dran ist.</p>
+      <p>Kontaktmöglichkeit zwischen den Sessions nach Absprache – für die Momente, in denen etwas hochkommt und nicht warten kann.</p>
+      <p><em>Das Programm erwirbst du über die Homo Homodea Plattform – durch mich zum halben Preis: 440 €.<br>
+      Meine Begleitung über 3–6 Monate: 1.500 €.<br>
+      Gesamtinvestition: 1.940 €.</em></p>
+    </div>
+
     <div class="divider-soft"></div>
 
     <h2>Wertschätzung & Rahmen</h2>
@@ -483,8 +519,12 @@
       <span class="preis-label">Wegstrecke</span>
       <span class="preis-wert">ab 400 € / Monat</span>
     </div>
+    <div class="preis-item">
+      <span class="preis-label">Dein Weg nach Hause</span>
+      <span class="preis-wert">1.940 € gesamt</span>
+    </div>
 
-    <p style="margin-top: 1.5rem;">Wegstrecken klären wir im Gespräch. Was du brauchst, wie lange, in welchem Rhythmus – das zeigt sich. Über mehrere Sitzungen hinweg wird es günstiger pro Termin.</p>
+    <p style="margin-top: 1.5rem;">Wegstrecken und das Coming Home Programm klären wir im Gespräch. Was du brauchst, wie lange, in welchem Rhythmus – das zeigt sich.</p>
 
     <p>Nach dem Erstgespräch – wenn es für beide Seiten stimmt – arbeiten wir mit einem schriftlichen Vertrag. Klar, fair, verbindlich. Und: Du kannst jederzeit kündigen – auf eigenen Wunsch, mit einer kurzen Begründung. Kein Druck. Keine Falle.</p>
 
