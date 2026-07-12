@@ -61,7 +61,15 @@
   </div>
 
   <div class="hero-content">
-    <p class="atem-einladung" id="atem-einladung">Atme mit dem Meer.</p>
+    <div class="atem-einladung" id="atem-einladung" role="button" tabindex="0" aria-label="Meeresklang starten oder stoppen">
+      <span class="ton-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 28 28">
+          <circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M11,9 L11,19 L20,14 Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="atem-label" id="atem-label">Atme mit dem Meer.</span>
+    </div>
     <h1>Ich war schon da,<br>wo du gerade steckst.</h1>
     <p class="subline">Hier darf es langsamer werden.</p>
     <div class="fliesstext">
@@ -131,15 +139,16 @@
     (function () {
       const bild = document.getElementById('meer-bild');
       const einladung = document.getElementById('atem-einladung');
+      const label = document.getElementById('atem-label');
       const audio = document.getElementById('meer-audio');
 
       function toggleMeer() {
         if (audio.paused) {
           audio.play().catch(function () {});
-          einladung.textContent = 'Es trägt …';
+          label.textContent = 'Es trägt …';
         } else {
           audio.pause();
-          einladung.textContent = 'Atme mit dem Meer.';
+          label.textContent = 'Atme mit dem Meer.';
         }
       }
 
@@ -150,6 +159,12 @@
       bild.setAttribute('tabindex', '0');
       bild.setAttribute('aria-label', 'Meeresklang starten oder stoppen');
       bild.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleMeer();
+        }
+      });
+      einladung.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           toggleMeer();
