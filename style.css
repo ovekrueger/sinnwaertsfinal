@@ -613,18 +613,18 @@ footer a:hover { opacity: 0.7; }
 }
 
 @keyframes phoenix-aufstieg {
-  0%   { opacity: 0; transform: translate(-50%, 320px) scale(0.75); }
+  0%   { opacity: 0; transform: translate(-50%, 420px) scale(0.75); }
   60%  { opacity: 1; }
   100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
 }
 
 .phoenix-img {
   position: absolute;
-  bottom: 30%;
+  bottom: 50%;
   left: 50%;
   width: 46%;
   max-width: 460px;
-  transform: translate(-50%, 320px) scale(0.75);
+  transform: translate(-50%, 420px) scale(0.75);
   opacity: 0;
   pointer-events: none;
   z-index: 4;
