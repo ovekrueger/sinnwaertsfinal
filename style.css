@@ -618,6 +618,11 @@ footer a:hover { opacity: 0.7; }
   100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
 }
 
+@keyframes phoenix-schweben {
+  0%, 100% { transform: translate(-50%, 0) scale(1); }
+  50%      { transform: translate(-50%, -14px) scale(1.015); }
+}
+
 .phoenix-img {
   position: absolute;
   bottom: 50%;
@@ -631,7 +636,9 @@ footer a:hover { opacity: 0.7; }
 }
 
 .hero-phoenix.risen .phoenix-img {
-  animation: phoenix-aufstieg 12s cubic-bezier(0.22,0.8,0.32,1) forwards;
+  animation:
+    phoenix-aufstieg 12s cubic-bezier(0.22,0.8,0.32,1) forwards,
+    phoenix-schweben 6s ease-in-out 12s infinite;
 }
 
 .phoenix-trigger {
