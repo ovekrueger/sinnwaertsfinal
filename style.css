@@ -72,6 +72,27 @@ nav {
 .nav-links a:hover { color: var(--rosa); }
 
 /* =========================
+   TON-ICON — geteiltes Play-Symbol
+   Ring + Dreieck, atmet leise, erbt Farbe vom Elternelement
+   Wird von Meer-, Klangschale- und Phoenix-Trigger genutzt
+   ========================= */
+.ton-icon {
+  display: flex;
+  animation: ton-icon-atem 4.5s ease-in-out infinite;
+}
+
+.ton-icon svg { display: block; }
+
+@keyframes ton-icon-atem {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.08); }
+}
+
+.ton-icon--schatten {
+  filter: drop-shadow(0 1px 6px rgba(0,0,0,0.4));
+}
+
+/* =========================
    HERO — STARTSEITE
    ========================= */
 .hero-img-wrap {
@@ -145,18 +166,28 @@ nav {
   padding: 5rem 2rem 2rem;
   text-align: center;
 }
+
 .hero-content .atem-einladung {
-  font-family: 'Lora', serif;
-  font-style: italic;
-  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   color: var(--tuerkis);
-  opacity: 1;
   margin-top: -2.5rem;
   margin-bottom: 2rem;
-  letter-spacing: 0.01em;
   cursor: pointer;
 }
 
+.hero-content .atem-einladung .atem-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  letter-spacing: 0.01em;
+}
+
+.hero-content .atem-einladung:hover .ton-icon {
+  animation-play-state: paused;
+}
 
 .hero-content h1 {
   font-family: 'Lora', serif;
@@ -510,7 +541,8 @@ footer a:hover { opacity: 0.7; }
   .hero-text-top { font-size: 22px; }
   .hero-text-overlay { font-size: 22px; bottom: 4rem; }
   .hero-content { padding: 3rem 1.5rem 2rem; }
-  .hero-content .atem-einladung { margin-top: -1.5rem; font-size: 14px; }
+  .hero-content .atem-einladung { margin-top: -1.5rem; }
+  .hero-content .atem-einladung .atem-label { font-size: 14px; }
   .hero-content .fliesstext { font-size: 18px; }
   .hero-content .subline { font-size: 20px; }
   .hero-content .fliesstext .pippi { font-size: 20px; }
@@ -520,6 +552,12 @@ footer a:hover { opacity: 0.7; }
   .portrait-block { flex-direction: column; align-items: flex-start; }
   .impulse-grid { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; }
+  .hero-phoenix { height: 55vh; }
+  .phoenix-img { width: 62%; }
+  .phoenix-trigger .ton-label { font-size: 16px; }
+  .hero-resonanz { height: 50vh; }
+  .hero-resonanz-text { font-size: 20px; white-space: normal; width: 90%; }
+  .klang-trigger .ton-label { font-size: 15px; }
 }
 
 /* =========================
@@ -575,25 +613,25 @@ footer a:hover { opacity: 0.7; }
 }
 
 @keyframes phoenix-aufstieg {
-  0%   { opacity: 0; transform: translate(-50%, 70px) scale(0.8); }
+  0%   { opacity: 0; transform: translate(-50%, 140px) scale(0.75); }
   60%  { opacity: 1; }
   100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
 }
 
 .phoenix-img {
   position: absolute;
-  bottom: 4%;
+  bottom: 10%;
   left: 50%;
   width: 46%;
   max-width: 460px;
-  transform: translate(-50%, 70px) scale(0.8);
+  transform: translate(-50%, 140px) scale(0.75);
   opacity: 0;
   pointer-events: none;
   z-index: 4;
 }
 
 .hero-phoenix.risen .phoenix-img {
-  animation: phoenix-aufstieg 3.5s cubic-bezier(0.22,0.8,0.32,1) forwards;
+  animation: phoenix-aufstieg 6s cubic-bezier(0.22,0.8,0.32,1) forwards;
 }
 
 .phoenix-trigger {
@@ -607,43 +645,101 @@ footer a:hover { opacity: 0.7; }
   cursor: pointer;
   z-index: 6;
   user-select: none;
-}
-
-.phoenix-icon {
-  display: flex;
   color: #ffffff;
-  filter: drop-shadow(0 1px 6px rgba(0,0,0,0.4));
-  animation: phoenix-icon-atem 4.5s ease-in-out infinite;
+  animation: ton-text-farbpuls 6s ease-in-out infinite;
 }
 
-@keyframes phoenix-icon-atem {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50%      { opacity: 1; transform: scale(1.08); }
-}
-
-.phoenix-label {
+.phoenix-trigger .ton-label {
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 19px;
-  color: #ffffff;
   text-shadow: 0 1px 8px rgba(0,0,0,0.45);
-  animation: phoenix-text-farbpuls 6s ease-in-out infinite;
 }
 
-@keyframes phoenix-text-farbpuls {
+@keyframes ton-text-farbpuls {
   0%, 100% { color: #ffffff; }
   50%      { color: var(--rosa); }
 }
 
-.phoenix-trigger:hover .phoenix-icon,
-.phoenix-trigger:hover .phoenix-label {
+.phoenix-trigger:hover {
+  animation-play-state: paused;
+  color: var(--rosa);
+}
+
+.phoenix-trigger:hover .ton-icon {
   animation-play-state: paused;
 }
 
-.phoenix-trigger:hover .phoenix-label { color: var(--rosa); }
+/* =========================
+   HERO — RESONANZRAUM (Klangschale)
+   ========================= */
+.hero-resonanz {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
 
-@media (max-width: 600px) {
-  .hero-phoenix { height: 55vh; }
-  .phoenix-img { width: 62%; }
-  .phoenix-label { font-size: 16px; }
+.hero-resonanz img.hero-resonanz-bild {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+
+.hero-resonanz-text {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: white;
+  text-shadow: 0 1px 12px rgba(0,100,100,0.4);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.klang-trigger {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 6;
+  user-select: none;
+  color: #ffffff;
+  animation: ton-text-farbpuls 6s ease-in-out infinite;
+}
+
+.klang-trigger .ton-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+}
+
+.klang-trigger:hover {
+  animation-play-state: paused;
+  color: var(--rosa);
+}
+
+.klang-trigger:hover .ton-icon {
+  animation-play-state: paused;
+}
+
+@keyframes klang-bild-puls {
+  0%   { transform: scale(1.0); }
+  50%  { transform: scale(1.035); }
+  100% { transform: scale(1.0); }
+}
+
+.hero-resonanz.klingt img.hero-resonanz-bild {
+  animation: klang-bild-puls 5s ease-in-out infinite;
+  will-change: transform;
 }
