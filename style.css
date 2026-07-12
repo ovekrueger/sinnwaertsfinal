@@ -539,7 +539,6 @@ footer a:hover { opacity: 0.7; }
   bottom: 10px;
   right: 10px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-   
   font-size: 0.7rem;
   color: #fff;
   background: rgba(0, 0, 0, 0.4);
@@ -550,3 +549,101 @@ footer a:hover { opacity: 0.7; }
   margin: 0;
 }
 
+/* =========================
+   HERO — PHOENIX ("Für dich"-Seite)
+   ========================= */
+.hero-phoenix {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+@keyframes phoenix-meer-atmen {
+  0%   { transform: scale(1.0) translateY(0px); }
+  50%  { transform: scale(1.12) translateY(-8px); }
+  100% { transform: scale(1.0) translateY(0px); }
+}
+
+.hero-phoenix .meer-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: phoenix-meer-atmen 10s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes phoenix-aufstieg {
+  0%   { opacity: 0; transform: translate(-50%, 70px) scale(0.8); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+.phoenix-img {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  width: 46%;
+  max-width: 460px;
+  transform: translate(-50%, 70px) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hero-phoenix.risen .phoenix-img {
+  animation: phoenix-aufstieg 3.5s cubic-bezier(0.22,0.8,0.32,1) forwards;
+}
+
+.phoenix-trigger {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 6;
+  user-select: none;
+}
+
+.phoenix-icon {
+  display: flex;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 6px rgba(0,0,0,0.4));
+  animation: phoenix-icon-atem 4.5s ease-in-out infinite;
+}
+
+@keyframes phoenix-icon-atem {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.08); }
+}
+
+.phoenix-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+  animation: phoenix-text-farbpuls 6s ease-in-out infinite;
+}
+
+@keyframes phoenix-text-farbpuls {
+  0%, 100% { color: #ffffff; }
+  50%      { color: var(--rosa); }
+}
+
+.phoenix-trigger:hover .phoenix-icon,
+.phoenix-trigger:hover .phoenix-label {
+  animation-play-state: paused;
+}
+
+.phoenix-trigger:hover .phoenix-label { color: var(--rosa); }
+
+@media (max-width: 600px) {
+  .hero-phoenix { height: 55vh; }
+  .phoenix-img { width: 62%; }
+  .phoenix-label { font-size: 16px; }
+}
