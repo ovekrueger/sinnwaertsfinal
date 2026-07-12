@@ -347,6 +347,22 @@
     </ul>
   </nav>
 
+  <div class="hero-phoenix" id="phoenix-wrap">
+    <img class="meer-bg" src="images/pastel-meer.jpg" alt="Weites Meer im Pastelllicht">
+    <p class="ki-hero-badge">KI-generiertes Bild</p>
+    <img class="phoenix-img" id="phoenix-img" src="phoenix.png" alt="Phoenix, der aus dem Meer aufsteigt – KI-generiert">
+    <div class="phoenix-trigger" id="phoenix-trigger" role="button" tabindex="0" aria-label="Klang starten oder stoppen">
+      <span class="ton-icon ton-icon--schatten" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 28 28">
+          <circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="1.1"/>
+          <path d="M11,9 L11,19 L20,14 Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="ton-label" id="phoenix-label">Aus der Asche. Wieder da.</span>
+    </div>
+    <audio id="phoenix-audio" src="phoenix.mp3" preload="none"></audio>
+  </div>
+
   <div class="wrap">
 
     <p style="margin-bottom: 2rem;">
@@ -481,6 +497,7 @@
     <div class="format-block">
       <span class="format-tag">Fokus</span>
       <h3>Auf den Punkt</h3>
+      <p>Auf den Punkt kann ich auch.</p>
       <p>Ein Ziel. Ein bis zwei Stunden. Klare Ausrichtung.</p>
       <p>Erst schauen wir, ob das Ziel realistisch ist – ein kurzer Blick auf das, was schon da ist und was fehlt. Dann richten wir uns ganz auf das aus, was jetzt dran ist.</p>
       <p><em>Beispiel: Du willst eine Entscheidung treffen, vor der du seit Wochen wegläufst. Erst schauen wir, wie deine Situation wirklich aussieht. Dann schauen wir gemeinsam, was es dafür wirklich braucht.</em></p>
@@ -553,6 +570,39 @@
     <a href="impressum.html">Impressum</a> ·
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
+
+  <script>
+    (function () {
+      const wrap = document.getElementById('phoenix-wrap');
+      const trigger = document.getElementById('phoenix-trigger');
+      const label = document.getElementById('phoenix-label');
+      const audio = document.getElementById('phoenix-audio');
+
+      function toggle() {
+        if (audio.paused) {
+          audio.currentTime = 0;
+          audio.play().catch(function () {});
+          wrap.classList.add('risen');
+          label.textContent = 'Er erhebt sich …';
+        } else {
+          audio.pause();
+          label.textContent = 'Aus der Asche. Wieder da.';
+        }
+      }
+
+      audio.addEventListener('ended', function () {
+        label.textContent = 'Aus der Asche. Wieder da.';
+      });
+
+      trigger.addEventListener('click', toggle);
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
