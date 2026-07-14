@@ -72,9 +72,7 @@ nav {
 .nav-links a:hover { color: var(--rosa); }
 
 /* =========================
-   TON-ICON — geteiltes Play-Symbol
-   Ring + Dreieck, atmet leise, erbt Farbe vom Elternelement
-   Wird von Meer-, Klangschale- und Phoenix-Trigger genutzt
+   TON-ICON
    ========================= */
 .ton-icon {
   display: flex;
@@ -102,9 +100,6 @@ nav {
   overflow: hidden;
 }
 
-/* =========================
-   HERO — SANFTE WELLENBEWEGUNG (vertieft, verstärkt)
-   ========================= */
 @keyframes ozean-atmen {
   0%   { transform: scale(1.0) translateY(0px); }
   50%  { transform: scale(1.19) translateY(-10px); }
@@ -369,6 +364,7 @@ nav {
 }
 
 .zurueck-link:hover { opacity: 1; }
+
 /* =========================
    KENNENLERNEN
    ========================= */
@@ -553,7 +549,6 @@ footer a:hover { opacity: 0.7; }
   .impulse-grid { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; }
   .hero-phoenix { height: 55vh; }
-  .phoenix-img { width: 62%; }
   .phoenix-trigger .ton-label { font-size: 16px; }
   .hero-resonanz { height: 50vh; }
   .hero-resonanz-text { font-size: 20px; white-space: normal; width: 90%; }
@@ -561,7 +556,7 @@ footer a:hover { opacity: 0.7; }
 }
 
 /* =========================
-   KI-BILD-BADGE (kleiner Hinweis auf Fotos)
+   KI-BILD-BADGE
    ========================= */
 .ki-bild-badge {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -593,54 +588,22 @@ footer a:hover { opacity: 0.7; }
 .hero-phoenix {
   position: relative;
   width: 100%;
-  height: 56.25vw; /* Exaktes 16:9 Verhältnis */
+  height: 56.25vw;
   max-height: 90vh;
   min-height: 400px;
   overflow: hidden;
+  background: #000;
 }
 
-@keyframes phoenix-meer-atmen {
-  0%   { transform: scale(1.0) translateY(0px); }
-  50%  { transform: scale(1.12) translateY(-8px); }
-  100% { transform: scale(1.0) translateY(0px); }
-}
-
-.hero-phoenix .meer-bg {
+.phoenix-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  animation: phoenix-meer-atmen 10s ease-in-out infinite;
-  will-change: transform;
-}
-
-@keyframes phoenix-aufstieg {
-  0%   { opacity: 0; transform: translate(-50%, 300px) scale(0.75); }
-  60%  { opacity: 1; }
-  100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
-}
-
-@keyframes phoenix-schweben {
-  0%, 100% { transform: translate(-50%, 0) scale(1); }
-  50%      { transform: translate(-50%, -14px) scale(1.015); }
-}
-
-.phoenix-img {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  width: 46%;
-  max-width: 460px;
-  transform: translate(-50%, 300px) scale(0.75);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 4;
-}
-
-.hero-phoenix.risen .phoenix-img {
-  animation:
-    phoenix-aufstieg 10s cubic-bezier(0.22,0.8,0.32,1) forwards,
-    phoenix-schweben 6s ease-in-out 10s infinite;
+  object-position: center center;
+  z-index: 1;
 }
 
 .phoenix-trigger {
@@ -752,6 +715,7 @@ footer a:hover { opacity: 0.7; }
   animation: klang-bild-puls 5s ease-in-out infinite;
   will-change: transform;
 }
+
 /* =========================
    BRIEF-EINLADUNG
    ========================= */
@@ -833,13 +797,4 @@ footer a:hover { opacity: 0.7; }
 @media (max-width: 600px) {
   .brief-form-row { flex-direction: column; }
   .brief-input, .brief-button { width: 100%; }
-}
-/* ── Phoenix Video ── */
-.phoenix-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
 }
