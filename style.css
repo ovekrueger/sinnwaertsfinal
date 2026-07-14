@@ -750,3 +750,85 @@ footer a:hover { opacity: 0.7; }
   animation: klang-bild-puls 5s ease-in-out infinite;
   will-change: transform;
 }
+/* =========================
+   BRIEF-EINLADUNG
+   ========================= */
+.brief-einladung {
+  max-width: 480px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.brief-text {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--heading);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.brief-subtext {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.75;
+  margin-bottom: 1.75rem;
+}
+
+.brief-formular { width: 100%; }
+
+.brief-form-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.brief-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.75rem 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: rgba(255,255,255,0.6);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+}
+
+.brief-input:focus {
+  outline: none;
+  border-color: var(--tuerkis);
+}
+
+.brief-button {
+  padding: 0.75rem 1.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--rosa);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.brief-button:hover { opacity: 0.85; }
+
+.brief-recaptcha {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
+@media (max-width: 600px) {
+  .brief-form-row { flex-direction: column; }
+  .brief-input, .brief-button { width: 100%; }
+}
