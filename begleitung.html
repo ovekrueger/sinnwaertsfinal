@@ -333,6 +333,15 @@
     }
 
     .kennenlernen-btn:hover { opacity: 0.7; }
+
+    /* ── Phoenix Video Hero ── */
+    .phoenix-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
@@ -347,11 +356,19 @@
     </ul>
   </nav>
 
+  <!-- PHOENIX HERO -->
   <div class="hero-phoenix" id="phoenix-wrap">
-    <img class="meer-bg" src="images/pastel-meer.jpg" alt="Weites Meer im Pastelllicht">
-    <p class="ki-hero-badge">KI-generiertes Bild</p>
-    <img class="phoenix-img" id="phoenix-img" src="phoenix.png" alt="Phoenix, der aus dem Meer aufsteigt – KI-generiert">
-    <div class="phoenix-trigger" id="phoenix-trigger" role="button" tabindex="0" aria-label="Klang starten oder stoppen">
+    <video
+      id="phoenix-video"
+      class="phoenix-video"
+      src="images/phoenix-aus-meer.mp4"
+      playsinline
+      muted
+      preload="none"
+      poster="images/pastel-meer.jpg"
+    ></video>
+    <p class="ki-hero-badge">KI-generiertes Video</p>
+    <div class="phoenix-trigger" id="phoenix-trigger" role="button" tabindex="0" aria-label="Klang und Video starten">
       <span class="ton-icon ton-icon--schatten" aria-hidden="true">
         <svg width="24" height="24" viewBox="0 0 28 28">
           <circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="1.1"/>
@@ -362,6 +379,7 @@
     </div>
     <audio id="phoenix-audio" src="phoenix.mp3" preload="none"></audio>
   </div>
+  <!-- /PHOENIX HERO -->
 
   <div class="wrap">
 
@@ -577,21 +595,29 @@
       const trigger = document.getElementById('phoenix-trigger');
       const label = document.getElementById('phoenix-label');
       const audio = document.getElementById('phoenix-audio');
+      const video = document.getElementById('phoenix-video');
 
       function toggle() {
         if (audio.paused) {
           audio.currentTime = 0;
+          video.currentTime = 0;
           audio.play().catch(function () {});
+          video.play().catch(function () {});
           wrap.classList.add('risen');
           label.textContent = 'Er erhebt sich …';
         } else {
           audio.pause();
+          video.pause();
           label.textContent = 'Aus der Asche. Wieder da.';
         }
       }
 
       audio.addEventListener('ended', function () {
         label.textContent = 'Aus der Asche. Wieder da.';
+      });
+
+      video.addEventListener('ended', function () {
+        // Video bleibt als Standbild stehen
       });
 
       trigger.addEventListener('click', toggle);
