@@ -249,6 +249,43 @@
 
     .kennenlernen a:hover { opacity: 0.7; }
 
+    .brief-optin {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin: 1rem 0 0.5rem;
+      text-align: left;
+    }
+    .brief-optin input {
+      margin-top: 3px;
+    }
+    .brief-optin label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .brief-dsgvo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      color: var(--text);
+      opacity: 0.6;
+      text-align: left;
+      margin: 0.5rem 0 0;
+      line-height: 1.6;
+    }
+    .brief-dsgvo a {
+      color: var(--tuerkis);
+    }
+    .brief-captcha-hinweis {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--text);
+      opacity: 0.7;
+      margin: 1rem 0 0.5rem;
+    }
+
     @media (max-width: 600px) {
       .seiten-hero { padding: 3rem 1.5rem 1.5rem; }
       .portrait-intro { flex-direction: column; }
@@ -357,6 +394,33 @@
   <div class="kennenlernen">
     <p>Neugierig geworden?</p>
     <a href="kontakt.html">Kostenloses Erstgespräch vereinbaren →</a>
+  </div>
+
+  <div class="brief-einladung">
+    <p class="brief-text">Nichts hier will deine Aufmerksamkeit stehlen. Auch der Brief nicht – er kommt einfach, wenn er kommt.</p>
+
+    <form class="brief-formular" action="https://2b8ca00c.sibforms.com/serve/MUIFACYwF3_2gEAR_lGPeF6peKGen3FauDc_oVX17vhCZengQ0S6FxElH5Oi96ZCHbraIOiR9ybpvDfiEZrjcNLiHHJ1sO1cjxu7Q6tnGMaJQYNmEFppEIXwWIgboDw71Sb0sbxCobOT28v0cdZx6S5eEyr9PG0aBb26HCulAaWI1Sd1kVkrfAxUZZ2LaQqiJGZm_4w8UAIJ3xXVhg==" method="POST">
+      <div class="brief-form-row">
+        <input class="brief-input" type="email" name="EMAIL" placeholder="deine E-Mail-Adresse" required>
+        <button type="submit" class="brief-button">Trag dich ein</button>
+      </div>
+
+      <div class="brief-optin">
+        <input type="checkbox" id="BRIEF_OPT_IN_ki" name="BRIEF_OPT_IN" value="1" required>
+        <label for="BRIEF_OPT_IN_ki">Ich möchte deinen Brief bekommen und bin mit der Datenschutzerklärung einverstanden.</label>
+      </div>
+
+      <p class="brief-dsgvo">Wir verwenden Brevo als unsere Marketing-Plattform. Indem du das Formular absendest, erklärst du dich einverstanden, dass die von dir angegebenen persönlichen Informationen an Brevo zur Bearbeitung übertragen werden gemäß den <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Datenschutzerklärung von Brevo.</a></p>
+
+      <p class="brief-captcha-hinweis">Nur noch ein kurzer Check, dass hier wirklich ein Mensch schreibt:</p>
+      <div class="brief-recaptcha">
+        <script src="https://www.google.com/recaptcha/api.js?hl=de" async defer></script>
+        <div class="g-recaptcha" data-theme="light" data-size="normal" data-sitekey="6LcyL1UtAAAAAG8YynyrgZm8Cecr30HJ7es-c-kU"></div>
+      </div>
+
+      <input type="text" name="email_address_check" value="" style="display:none;">
+      <input type="hidden" name="locale" value="de">
+    </form>
   </div>
 
   <footer>
