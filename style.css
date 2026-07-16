@@ -1,409 +1,800 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sinnwärts Studio – Begleitung für Menschen, die spüren, dass es so nicht weitergeht. Regulation, Suchtdynamiken, bewusster Umgang mit KI. Ove Krüger, Hamburg.">
-<link rel="canonical" href="https://sinnwaerts-studio.de/">
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
 
-<!-- Open Graph -->
-<meta property="og:title" content="Sinnwärts Studio · Ove Krüger">
-<meta property="og:description" content="Hier darf es langsamer werden. Begleitung für Menschen, die spüren: da ist noch mehr.">
-<meta property="og:image" content="https://sinnwaerts-studio.de/images/pastel-meer.jpg">
-<meta property="og:url" content="https://sinnwaerts-studio.de/">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="de_DE">
-  <title>Ove Krüger · Sinnwärts Studio</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-  .hero-text-top {
-    font-size: clamp(22px, 3.5vw, 36px);
-  }
+/* =========================
+   CSS VARIABLEN
+   ========================= */
+:root {
+  --bg-1: #f8f4ee;
+  --bg-2: #fce8ec;
+  --bg-3: #f0ecf8;
+  --bg-4: #e8f4f4;
+  --bg-5: #f0f8ec;
+  --rosa: #b85870;
+  --rosa-hell: #fce8ec;
+  --tuerkis: #3a8888;
+  --tuerkis-hell: #e8f4f4;
+  --lila: #7858a0;
+  --gelb: #c8a020;
+  --text: #4a3840;
+  --heading: #201828;
+  --border: rgba(180,120,140,0.2);
+}
 
-  .hero-text-overlay {
-    position: absolute;
-    bottom: 7.5rem;
-    left: 50%;
-    transform: translateX(-50%) perspective(200px) rotateX(20deg);
-    transform-origin: bottom center;
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: clamp(28px, 5vw, 48px);
-    font-weight: 300;
-    color: #f5e6c8;
-    text-shadow: 0 2px 18px rgba(0,0,0,0.18);
-    white-space: nowrap;
-    letter-spacing: 0.02em;
-  }
-</style>
-</head>
-<body>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Start</a></li>
-      <li><a href="uebermich.html">Über mich</a></li>
-      <li><a href="begleitung.html">Für dich</a></li>
-      <li><a href="resonanzraum.html">Resonanzraum</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-  </nav>
+/* =========================
+   RESET & BASE
+   ========================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
- <div class="hero-img-wrap">
-    <img id="meer-bild" src="images/pastel-meer.jpg" alt="Weites Meer im Pastelllicht" style="cursor:pointer;">
-    <p class="ki-hero-badge">KI-generiertes Bild</p>
-    <div class="hero-text-top">Flieg, Schmetterling, flieg.</div>
-    <svg class="hero-vogel" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,15 Q10,0 20,8 Q30,0 40,8 Q50,0 60,15"
-            stroke="#d4882a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    </svg>
-    <div class="hero-text-overlay">Da ist noch mehr.</div>
-    <audio id="meer-audio" src="start.wellen.mp3" loop preload="none"></audio>
-  </div>
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(170deg,
+    var(--bg-1) 0%,
+    var(--bg-2) 20%,
+    var(--bg-1) 40%,
+    var(--bg-3) 60%,
+    var(--bg-4) 80%,
+    var(--bg-5) 100%
+  );
+  min-height: 100vh;
+  color: var(--text);
+}
 
-  <div class="hero-content">
-    <div class="atem-einladung" id="atem-einladung" role="button" tabindex="0" aria-label="Meeresklang starten oder stoppen">
-      <span class="ton-icon" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 28 28">
-          <circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="1.1"/>
-          <path d="M11,9 L11,19 L20,14 Z" fill="currentColor"/>
-        </svg>
-      </span>
-      <span class="atem-label" id="atem-label">Atme mit dem Meer.</span>
-    </div>
-    <h1>Ich war schon da,<br>wo du gerade steckst.</h1>
-    <p class="subline">Hier darf es langsamer werden.</p>
-    <div class="fliesstext">
-      <p>Manches hat keinen Namen. Es fühlt sich einfach zu viel an. Zu schnell. Zu leer.</p>
-      <p>Noch kein Name nötig. Noch keine Richtung. Ankommen reicht.</p>
-      <p>Manchmal braucht es jemanden, der das kennt – und bleibt. Ich kenne es. Ich bleibe.</p>
-      <p>Und dann machen wir uns gemeinsam auf den Weg.</p>
-      <p class="pippi">Wohin?</p>
-      <p class="pippi">Das Leben ist geil – da ist noch was.</p>
-      <p class="pippi sayyess">Say Yes to your Scheiß.</p>
-    </div>
-  </div>
+/* =========================
+   NAVIGATION
+   ========================= */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: rgba(248,244,238,0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 0.5px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-  <div class="divider"></div>
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
 
-  <div class="portrait-block">
-    <img class="portrait" src="images/ove-rolli.jpg" alt="Ove Krüger">
-    <div class="siegel-block">
-      <a href="curriculum.html">
-        <img class="siegel" src="images/ltc-siegel.png" alt="Life Trust Coach Siegel">
-      </a>
-      <p class="siegel-text">Life Trust Coach®<br>zertifiziert nach EASC-Richtlinien</p>
-    </div>
-  </div>
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
 
-  <div class="studio-block">
-    <h2>Sinnwärts Studio</h2>
-    <p class="name">Ove Krüger</p>
-  </div>
+.nav-links a:hover { color: var(--rosa); }
 
-  <div class="freche-zeile">
-    Immer Freund. Manchmal liebevoller Arschtreter.
-  </div>
+/* =========================
+   TON-ICON
+   ========================= */
+.ton-icon {
+  display: flex;
+  animation: ton-icon-atem 4.5s ease-in-out infinite;
+}
 
-  <div class="divider"></div>
+.ton-icon svg { display: block; }
 
-  <div class="karten-wrap">
-    <div class="karte karte-1">
-      <h3><a href="begleitung.html">Begleitung</a></h3>
-      <p>Individuelle Begleitung. Kein Druck, kein Zwang. Du entscheidest, was dir guttut. Mit Zufriedenheitsgarantie.</p>
-    </div>
-    <div class="karte karte-2">
-      <h3><a href="sucht-regulation.html">Sucht & Regulation</a></h3>
-      <p>Nicht aufhören müssen – sondern wissen, wofür.</p>
-    </div>
-    <div class="karte karte-3">
-      <h3><a href="ki-sociale-medien.html">KI & Social Media</a></h3>
-      <p>Alles dreht sich schneller. Beide können entlasten – oder abhängig machen. Der Unterschied liegt in der Haltung.</p>
-    </div>
-    <div class="karte karte-4">
-      <h3><a href="resonanzraum.html">Resonanzraum</a></h3>
-      <p>Kleine Einladungen zum Innehalten. Keine Aufgaben. Kein Erwarten.</p>
-    </div>
-  </div>
+@keyframes ton-icon-atem {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.08); }
+}
 
-  <div class="kennenlernen">
-    <p>Neugierig geworden?</p>
-    <a href="kontakt.html">Kostenloses Kennenlernen vereinbaren →</a>
-  </div>
+.ton-icon--schatten {
+  filter: drop-shadow(0 1px 6px rgba(0,0,0,0.4));
+}
 
-  <div class="divider"></div>
+/* =========================
+   HERO — STARTSEITE
+   ========================= */
+.hero-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
 
-  <p style="text-align:center; font-family:'Lora', serif; font-style:italic; font-size:20px; color:#5b8a80; max-width:600px; margin:2.5rem auto 1.5rem auto; padding:0 20px;">
-    Falls du bis hierhin gelesen hast: Vielleicht ist da noch mehr.
-  </p>
+@keyframes ozean-atmen {
+  0%   { transform: scale(1.0) translateY(0px); }
+  50%  { transform: scale(1.19) translateY(-10px); }
+  100% { transform: scale(1.0) translateY(0px); }
+}
 
-  <!-- Begin Brevo Form -->
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: ozean-atmen 9s ease-in-out infinite;
+  will-change: transform;
+}
 
-<style>
-  @font-face {
-    font-display: block;
-    font-family: Roboto;
-    src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-  }
+.hero-text-top {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 36px;
+  color: #d4882a;
+  text-shadow: 0 1px 10px rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
 
-  @font-face {
-    font-display: fallback;
-    font-family: Roboto;
-    font-weight: 600;
-    src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-  }
+.hero-vogel {
+  position: absolute;
+  top: 4rem;
+  right: 5%;
+  width: 60px;
+  opacity: 0.85;
+}
 
-  @font-face {
-    font-display: fallback;
-    font-family: Roboto;
-    font-weight: 700;
-    src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-  }
+.hero-text-overlay {
+  position: absolute;
+  bottom: 7.5rem;
+  left: 50%;
+  transform: translateX(-50%) perspective(200px) rotateX(20deg);
+  transform-origin: bottom center;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 300;
+  color: #f5e6c8;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.18);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
 
-  :where(.sib-form-message-panel) {
-    display: none;
-  }
+/* =========================
+   HERO CONTENT — STARTSEITE
+   ========================= */
+.hero-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 5rem 2rem 2rem;
+  text-align: center;
+}
 
-  :where(.sib-form-message-panel .sib-notification__icon) {
-    width: 20px;
-    height: 20px;
-  }
+.hero-content .atem-einladung {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--tuerkis);
+  margin-top: -2.5rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
 
-  #sib-container input:-ms-input-placeholder {
-    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-    text-align: left;
-    color: #b8ada3;
-  }
+.hero-content .atem-einladung .atem-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  letter-spacing: 0.01em;
+}
 
-  #sib-container input::placeholder {
-    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-    text-align: left;
-    color: #b8ada3;
-  }
+.hero-content .atem-einladung:hover .ton-icon {
+  animation-play-state: paused;
+}
 
-  #sib-container a {
-    text-decoration: underline;
-    color: #5b8a80;
-  }
+.hero-content h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 400;
+  color: #7a4a38;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
 
-  .brief-brevo-wrap .sib-form-block p,
-  .brief-brevo-wrap .sib-text-form-block p {
-    margin: 0 0 0.5rem 0;
-  }
+.hero-content .subline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--rosa);
+  margin-bottom: 3rem;
+}
 
-  .brief-brevo-wrap .sib-optin p {
-    margin: 0;
-  }
+.hero-content .fliesstext {
+  font-size: 21px;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  .captcha-hinweis {
-    font-family: 'Plus Jakarta Sans', Helvetica, sans-serif;
-    font-size: 13px;
-    font-style: italic;
-    color: #8a8178;
-    text-align: center;
-    margin: 0 0 0.75rem 0;
-  }
+.hero-content .fliesstext p {
+  margin-bottom: 1.25rem;
+}
 
-  .captcha-rahmen {
-    display: flex;
+.hero-content .fliesstext .pippi {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--tuerkis);
+  margin-top: 0.5rem;
+}
+
+.hero-content .fliesstext .sayyess {
+  color: #d4882a;
+  font-size: 26px;
+}
+
+/* =========================
+   PORTRAIT BLOCK — STARTSEITE
+   ========================= */
+.portrait-block {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.5rem;
+}
+
+.portrait-block img.portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 0.5px solid var(--border);
+}
+
+.siegel-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.portrait-block img.siegel {
+  width: 120px;
+  height: auto;
+  transition: opacity 0.2s;
+}
+
+.portrait-block img.siegel:hover { opacity: 0.8; }
+
+.siegel-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+/* =========================
+   STUDIO BLOCK — STARTSEITE
+   ========================= */
+.studio-block {
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  padding: 0 2rem;
+}
+
+.studio-block h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.25rem;
+}
+
+.studio-block .name {
+  font-size: 15px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+
+.freche-zeile {
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  padding: 0 2rem;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--tuerkis);
+  white-space: nowrap;
+}
+
+/* =========================
+   KARTEN — STARTSEITE
+   ========================= */
+.karten-wrap {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  padding: 0 2rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.karte {
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 0.5px solid var(--border);
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+}
+
+.karte h3 {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.5rem;
+}
+
+.karte h3 a {
+  color: var(--heading);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.karte h3 a:hover { color: var(--rosa); }
+
+.karte p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.karte-1 { border-top: 2px solid #f2a4a8; }
+.karte-2 { border-top: 2px solid #c4a8d8; }
+.karte-3 { border-top: 2px solid #7ecece; }
+.karte-4 { border-top: 2px solid #f5d44a; }
+
+.zurueck-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.65;
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+
+.zurueck-link:hover { opacity: 1; }
+
+/* =========================
+   KENNENLERNEN
+   ========================= */
+.kennenlernen {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  text-align: center;
+  border-top: 0.5px solid var(--border);
+}
+
+.kennenlernen p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.kennenlernen a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--rosa);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--rosa);
+  padding: 2px 0;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.kennenlernen a:hover { opacity: 0.7; }
+
+/* =========================
+   DIVIDER
+   ========================= */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 3rem auto;
+}
+
+.divider-soft {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 2.5rem 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 12px;
+  color: var(--text);
+  border-top: 0.5px solid var(--border);
+}
+
+footer a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border);
+  transition: opacity 0.2s;
+}
+
+footer a:hover { opacity: 0.7; }
+
+/* =========================
+   RESONANZRAUM — IMPULSE KARTEN
+   ========================= */
+.impulse-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.impuls-karte {
+  background: rgba(255,255,255,0.5);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border-top: 2px solid var(--tuerkis);
+}
+
+.impuls-karte h3 {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.75rem;
+}
+
+.impuls-karte p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* =========================
+   RESONANZRAUM — BLOG KARTEN
+   ========================= */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 1.5rem;
+}
+
+.blog-karte {
+  background: rgba(255,255,255,0.5);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.blog-karte:hover { background: rgba(255,255,255,0.8); }
+
+.blog-karte h3 {
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--heading);
+  margin-bottom: 0.5rem;
+}
+
+.blog-karte p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.blog-karte-1 { border-top: 2px solid var(--rosa); }
+.blog-karte-2 { border-top: 2px solid var(--tuerkis); }
+
+.inspirierende-beitraege {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 3rem;
+}
+
+.inspirierende-beitraege a {
+  color: var(--rosa);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--rosa);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.inspirierende-beitraege a:hover { opacity: 0.7; }
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 600px) {
+  .nav-links {
+    gap: 0.75rem;
+    font-size: 12px;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 12px;
-    background-color: rgba(255,255,255,0.4);
-    border: 0.5px solid rgba(180,120,140,0.2);
-    border-radius: 8px;
   }
-</style>
-<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
-<div class="brief-brevo-wrap sib-form" style="text-align: center; padding: 40px 20px; background: transparent;">
-  <div id="sib-form-container" class="sib-form-container">
+  .hero-img-wrap { height: 50vh; }
+  .hero-text-top { font-size: 22px; }
+  .hero-text-overlay { font-size: 22px; bottom: 4rem; }
+  .hero-content { padding: 3rem 1.5rem 2rem; }
+  .hero-content .atem-einladung { margin-top: -1.5rem; }
+  .hero-content .atem-einladung .atem-label { font-size: 14px; }
+  .hero-content .fliesstext { font-size: 18px; }
+  .hero-content .subline { font-size: 20px; }
+  .hero-content .fliesstext .pippi { font-size: 20px; }
+  .hero-content .fliesstext .sayyess { font-size: 20px; }
+  .freche-zeile { font-size: 18px; white-space: normal; }
+  .karten-wrap { grid-template-columns: 1fr; }
+  .portrait-block { flex-direction: column; align-items: flex-start; }
+  .impulse-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .hero-phoenix { height: 55vh; }
+  .phoenix-trigger .ton-label { font-size: 16px; }
+  .hero-resonanz { height: 50vh; }
+  .hero-resonanz-text { font-size: 20px; white-space: normal; width: 90%; }
+  .klang-trigger .ton-label { font-size: 15px; }
+}
 
-    <div id="error-message" class="sib-form-message-panel" style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:15px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:8px; max-width:480px; margin:0 auto 20px auto;">
-      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-          <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-        </svg>
-        <span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span>
-      </div>
-    </div>
-    <div></div>
+/* =========================
+   KI-BILD-BADGE
+   ========================= */
+.ki-bild-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text);
+  opacity: 0.55;
+  text-align: center;
+  margin-top: 0.5rem;
+}
 
-    <div id="success-message" class="sib-form-message-panel" style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:15px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:8px; max-width:480px; margin:0 auto 20px auto;">
-      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-          <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-        </svg>
-        <span class="sib-form-message-panel__inner-text">Angekommen. Schön, dass du da bist.</span>
-      </div>
-    </div>
-    <div></div>
+.ki-hero-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 8px;
+  border-radius: 4px;
+  opacity: 0.85;
+  z-index: 5;
+  margin: 0;
+}
 
-    <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:480px; text-align:center; background-color:rgba(255,255,255,0.45); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); border-width:0.5px; border-style:solid; border-color:rgba(180,120,140,0.2); border-radius:12px; direction:ltr; margin:0 auto; padding: 40px;">
-      <form id="sib-form" method="POST" action="https://2b8ca00c.sibforms.com/serve/MUIFACYwF3_2gEAR_lGPeF6peKGen3FauDc_oVX17vhCZengQ0S6FxElH5Oi96ZCHbraIOiR9ybpvDfiEZrjcNLiHHJ1sO1cjxu7Q6tnGMaJQYNmEFppEIXwWIgboDw71Sb0sbxCobOT28v0cdZx6S5eEyr9PG0aBb26HCulAaWI1Sd1kVkrfAxUZZ2LaQqiJGZm_4w8UAIJ3xXVhg==" data-type="subscription">
+/* =========================
+   HERO — PHOENIX ("Für dich"-Seite)
+   ========================= */
+.hero-phoenix {
+  position: relative;
+  width: 100%;
+  height: 56.25vw;
+  max-height: 90vh;
+  min-height: 400px;
+  overflow: hidden;
+  background: #000;
+}
 
-        <div style="padding: 4px 0 12px 0;">
-          <div class="sib-form-block" style="font-family:'Lora', Georgia, serif; font-size:26px; font-weight:400; text-align:center; color:#2f3a36; background-color:transparent;">
-            <p>Brief an dich</p>
-          </div>
-        </div>
+.phoenix-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 1;
+}
 
-        <div style="padding: 4px 0 20px 0;">
-          <div class="sib-form-block" style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:16px; text-align:center; color:#5b8a80; background-color:transparent;">
-            <div class="sib-text-form-block">
-              <p style="font-style:italic;">Ich schreibe Briefe. Kein Newsletter, kein Verkauf.</p>
-            </div>
-          </div>
-        </div>
+.phoenix-trigger {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 6;
+  user-select: none;
+  color: #ffffff;
+  animation: ton-text-farbpuls 6s ease-in-out infinite;
+}
 
-        <div style="padding: 8px 0;">
-          <div class="sib-input sib-form-block">
-            <div class="form__entry entry_block">
-              <div class="form__label-row">
-                <div class="entry__field">
-                  <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="deine E-Mail-Adresse" data-required="true" required
-                    style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:15px; color:#4a3840; background-color:rgba(255,255,255,0.6); border:0.5px solid rgba(180,120,140,0.2); border-radius:6px; padding:0.75rem 1rem; width:100%; box-sizing:border-box;" />
-                </div>
-              </div>
-              <label class="entry__error entry__error--primary" style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:14px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:6px;">
-              </label>
-            </div>
-          </div>
-        </div>
+.phoenix-trigger .ton-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+}
 
-        <div style="padding: 12px 0;">
-          <div class="sib-optin sib-form-block" data-required="true">
-            <div class="form__entry entry_mcq">
-              <div class="form__label-row" style="text-align:left;">
-                <div class="entry__choice">
-                  <label style="display:flex; align-items:flex-start; gap:0.6rem; cursor:pointer;">
-                    <input type="checkbox" class="input_replaced" value="1" id="BRIEF_OPT_IN" name="BRIEF_OPT_IN" required style="margin-top:3px;" />
-                    <span style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:14px; text-align:left; color:#3d453f;">
-                      <p>Ich möchte deinen Brief bekommen und bin mit der Datenschutzerklärung einverstanden.</p>
-                    </span>
-                  </label>
-                </div>
-              </div>
-              <label class="entry__error entry__error--primary" style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:14px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:6px;">
-              </label>
-              <label class="entry__specification" style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:12px; text-align:left; color:#8a8178; display:block; margin-top:6px;">
-                Du kannst den Brief jederzeit über den Link in meinem Brief abbestellen.
-              </label>
-            </div>
-          </div>
-        </div>
+@keyframes ton-text-farbpuls {
+  0%, 100% { color: #ffffff; }
+  50%      { color: var(--rosa); }
+}
 
-        <div style="padding: 8px 0;">
-          <div class="sib-form__declaration" style="direction:ltr; text-align:left;">
-            <div style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:12px; text-align:left; color:#8a8178; background-color:transparent;">
-              <p>Wir verwenden Brevo als unsere Marketing-Plattform. Indem du das Formular absendest, erklärst du dich einverstanden, dass die von dir angegebenen persönlichen Informationen an Brevo zur Bearbeitung übertragen werden gemäß den <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="nofollow noopener" style="color:#5b8a80;">Datenschutzerklärung von Brevo.</a></p>
-            </div>
-          </div>
-        </div>
+.phoenix-trigger:hover {
+  animation-play-state: paused;
+  color: var(--rosa);
+}
 
-        <div style="padding: 12px 0;">
-          <p class="captcha-hinweis">Nur noch ein kurzer Check, dass hier wirklich ein Mensch schreibt:</p>
-          <div class="sib-captcha sib-form-block">
-            <div class="form__entry entry_block">
-              <div class="form__label-row captcha-rahmen">
-                <script>
-                  function handleCaptchaResponse() {
-                    var event = new Event('captchaChange');
-                    document.getElementById('sib-captcha').dispatchEvent(event);
-                  }
-                </script>
-                <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha" data-sitekey="6LcyL1UtAAAAAG8YynyrgZm8Cecr30HJ7es-c-kU" data-callback="handleCaptchaResponse" style="direction:ltr"></div>
-              </div>
-              <label class="entry__error entry__error--primary" style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:14px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:6px;">
-              </label>
-            </div>
-          </div>
-        </div>
+.phoenix-trigger:hover .ton-icon {
+  animation-play-state: paused;
+}
 
-        <div style="padding: 12px 0 0 0;">
-          <div class="sib-form-block" style="text-align: center">
-            <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-family:'Plus Jakarta Sans', Helvetica, sans-serif; font-size:15px; font-weight:500; color:#ffffff; background-color:#c98a9a; border-width:0px; border-radius:6px; padding:0.75rem 1.75rem;" form="sib-form" type="submit">
-              <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-              </svg>
-              Her mit dem Brief
-            </button>
-          </div>
-        </div>
+/* =========================
+   HERO — RESONANZRAUM (Klangschale)
+   ========================= */
+.hero-resonanz {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  overflow: hidden;
+}
 
-        <input type="text" name="email_address_check" value="" class="input--hidden">
-        <input type="hidden" name="locale" value="de">
+.hero-resonanz img.hero-resonanz-bild {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
 
-      </form>
-    </div>
-  </div>
-</div>
+.hero-resonanz-text {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: white;
+  text-shadow: 0 1px 12px rgba(0,100,100,0.4);
+  white-space: nowrap;
+  text-align: center;
+}
 
-<script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
-  window.LOCALE = 'de';
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
-  window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein. ";
-  window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
-  window.INVALID_NUMBER = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
-  window.INVALID_DATE = "Bitte gib ein gültiges Datum ein";
-  window.REQUIRED_MULTISELECT_MESSAGE = 'Wähle bitte mindestens eine Option aus';
-  window.translation = {
-    common: {
-      selectedList: '{quantity} Liste ausgewählt',
-      selectedLists: '{quantity} Listen ausgewählt',
-      selectedOption: '{quantity} ausgewählt',
-      selectedOptions: '{quantity} ausgewählt',
-    }
-  };
-  var AUTOHIDE = Boolean(0);
-</script>
+.klang-trigger {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  z-index: 6;
+  user-select: none;
+  color: #ffffff;
+  animation: ton-text-farbpuls 6s ease-in-out infinite;
+}
 
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-<script src="https://www.google.com/recaptcha/api.js?hl=de"></script>
+.klang-trigger .ton-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+}
 
-<!-- End Brevo Form -->
+.klang-trigger:hover {
+  animation-play-state: paused;
+  color: var(--rosa);
+}
 
-  <footer>
-    © 2026 Ove Krüger · Sinnwärts Studio ·
-    <a href="impressum.html">Impressum</a> ·
-    <a href="datenschutz.html">Datenschutz</a>
-  </footer>
+.klang-trigger:hover .ton-icon {
+  animation-play-state: paused;
+}
 
-  <script>
-    (function () {
-      const bild = document.getElementById('meer-bild');
-      const einladung = document.getElementById('atem-einladung');
-      const label = document.getElementById('atem-label');
-      const audio = document.getElementById('meer-audio');
+@keyframes klang-bild-puls {
+  0%   { transform: scale(1.0); }
+  50%  { transform: scale(1.035); }
+  100% { transform: scale(1.0); }
+}
 
-      function toggleMeer() {
-        if (audio.paused) {
-          audio.play().catch(function () {});
-          label.textContent = 'Es trägt …';
-        } else {
-          audio.pause();
-          label.textContent = 'Atme mit dem Meer.';
-        }
-      }
+.hero-resonanz.klingt img.hero-resonanz-bild {
+  animation: klang-bild-puls 5s ease-in-out infinite;
+  will-change: transform;
+}
 
-      bild.addEventListener('click', toggleMeer);
-      einladung.addEventListener('click', toggleMeer);
+/* =========================
+   BRIEF-EINLADUNG
+   ========================= */
+.brief-einladung {
+  max-width: 480px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
 
-      bild.setAttribute('role', 'button');
-      bild.setAttribute('tabindex', '0');
-      bild.setAttribute('aria-label', 'Meeresklang starten oder stoppen');
-      bild.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggleMeer();
-        }
-      });
-      einladung.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggleMeer();
-        }
-      });
-    })();
-  </script>
-</body>
-</html>
+.brief-text {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--heading);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.brief-subtext {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.75;
+  margin-bottom: 1.75rem;
+}
+
+.brief-formular { width: 100%; }
+
+.brief-form-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.brief-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.75rem 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: rgba(255,255,255,0.6);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+}
+
+.brief-input:focus {
+  outline: none;
+  border-color: var(--tuerkis);
+}
+
+.brief-button {
+  padding: 0.75rem 1.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--rosa);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.brief-button:hover { opacity: 0.85; }
+
+.brief-recaptcha {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
+@media (max-width: 600px) {
+  .brief-form-row { flex-direction: column; }
+  .brief-input, .brief-button { width: 100%; }
+}
