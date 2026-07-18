@@ -550,6 +550,7 @@ footer a:hover { opacity: 0.7; }
   .blog-grid { grid-template-columns: 1fr; }
   .hero-phoenix { height: 55vh; }
   .phoenix-trigger .ton-label { font-size: 16px; }
+  .phoenix-overlay-text { top: 1.75rem; }
   .hero-resonanz { height: 50vh; }
   .hero-resonanz-text { font-size: 20px; white-space: normal; width: 90%; }
   .klang-trigger .ton-label { font-size: 15px; }
@@ -640,6 +641,39 @@ footer a:hover { opacity: 0.7; }
 
 .phoenix-trigger:hover .ton-icon {
   animation-play-state: paused;
+}
+
+.phoenix-overlay-text {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.phoenix-overlay-text .flieg-satz {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 300;
+  color: #f5e6c8;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.2);
+  margin-bottom: 0.5rem;
+}
+
+.phoenix-overlay-text .mehr-satz {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--rosa, #b85870);
+  opacity: 0.9;
+}
+
+.hero-phoenix.risen .phoenix-overlay-text {
+  opacity: 0;
 }
 
 /* =========================
