@@ -174,7 +174,13 @@ nav {
   margin-bottom: 2rem;
   cursor: pointer;
 }
-
+@keyframes atem-text-puls {
+  0%, 100% { color: var(--tuerkis); }
+  50%      { color: var(--rosa); }
+}
+.hero-content .atem-einladung {
+  animation: atem-text-puls 4.5s ease-in-out infinite;
+}
 .hero-content .atem-einladung .atem-label {
   font-family: 'Lora', serif;
   font-style: italic;
