@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
 
 /* =========================
@@ -102,7 +103,7 @@ nav {
 
 @keyframes ozean-atmen {
   0%   { transform: scale(1.0) translateY(0px); }
-  50%  { transform: scale(1.19) translateY(-10px); }
+  50%  { transform: scale(1.19) translateY(-14px); }
   100% { transform: scale(1.0) translateY(0px); }
 }
 
