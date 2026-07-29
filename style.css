@@ -263,10 +263,11 @@ nav {
   align-items: flex-start;
   gap: 0.5rem;
 }
-
 .portrait-block img.siegel {
   width: 120px;
-  height: auto;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
   transition: opacity 0.2s;
 }
 
