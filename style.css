@@ -254,6 +254,7 @@ nav {
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: 55% 40%;
   border: 0.5px solid var(--border);
 }
 .siegel-block {
