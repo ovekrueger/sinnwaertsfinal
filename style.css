@@ -280,7 +280,9 @@ nav {
   letter-spacing: 0.04em;
   line-height: 1.6;
 }
-
+.portrait-block .siegel-wrap {
+  border: 2px solid var(--rosa);
+}
 /* =========================
    STUDIO BLOCK — STARTSEITE
    ========================= */
