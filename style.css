@@ -252,11 +252,10 @@ nav {
 .portrait-block img.portrait {
   width: 200px;
   height: 200px;
-  border-radius: 8px;
+  border-radius: 50%;
   object-fit: cover;
   border: 0.5px solid var(--border);
 }
-
 .siegel-block {
   display: flex;
   flex-direction: column;
