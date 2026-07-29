@@ -263,13 +263,12 @@ nav {
   gap: 0.5rem;
 }
 .portrait-block img.siegel {
-  width: 120px;
-  height: 120px;
+  width: 112px;
+  height: 112px;
   object-fit: cover;
   border-radius: 50%;
   transition: opacity 0.2s;
 }
-
 .portrait-block img.siegel:hover { opacity: 0.8; }
 
 .siegel-text {
@@ -280,7 +279,15 @@ nav {
   line-height: 1.6;
 }
 .portrait-block .siegel-wrap {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #14314f;
   border: 2px solid var(--rosa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* =========================
    STUDIO BLOCK — STARTSEITE
