@@ -133,7 +133,6 @@
     margin-top: 16px;
   }
 
-  /* Zertifikat & Siegel — Platzhalter */
   .credentials {
     max-width: 700px;
     margin: 20px auto 0;
@@ -161,24 +160,16 @@
   .credential-slot {
     flex: 1 1 220px;
     max-width: 260px;
-    min-height: 180px;
-    border: 1px dashed var(--border);
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color: var(--teal-soft);
+    overflow: hidden;
+    border: 0.5px solid var(--border);
   }
 
-  /*
-    Sobald Zertifikat und Siegel vorliegen, hier jeweils ersetzen durch z. B.:
-    <img src="zertifikat-human-ai-mastery.png" alt="Zertifikat HUMAN AI MASTERY, LTG" style="max-width:100%; height:auto;">
-    <img src="siegel-human-ai-mastery.png" alt="Siegel HUMAN AI MASTERY" style="max-width:100%; height:auto;">
-  */
+  .credential-slot img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
   footer {
     text-align: center;
@@ -256,11 +247,15 @@
   <div class="signature">Ove Krüger</div>
 </section>
 
-<section class="credentials">
-  <div class="label">Zertifikat &amp; Siegel</div>
+<section class="credentials" id="zertifikate">
+  <div class="label">Zertifikate</div>
   <div class="credentials-grid">
-    <div class="credential-slot" id="zertifikat-slot">Zertifikat<br>folgt</div>
-    <div class="credential-slot" id="siegel-slot">Siegel<br>folgt</div>
+    <a class="credential-slot" href="../images/zertifikat-human-ai-mastery.png" target="_blank" rel="noopener">
+      <img src="../images/zertifikat-human-ai-mastery.png" alt="Zertifikat HUMAN AI MASTERY – Ove Krüger, zertifiziert durch homodea">
+    </a>
+    <a class="credential-slot" href="../images/zertifikat-mensch-ki-botschafter.png" target="_blank" rel="noopener">
+      <img src="../images/zertifikat-mensch-ki-botschafter.png" alt="Zertifikat Mensch-KI-Botschafter:in – Ove Krüger, zertifiziert durch homodea">
+    </a>
   </div>
 </section>
 
