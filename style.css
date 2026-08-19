@@ -240,7 +240,7 @@ nav {
   object-position: center center;
   border-radius: 50%;
   transition: opacity 0.2s;
-  transform: scale(1.1) translateX(-2%);
+  transform: scale(1.1) translateX(-2.5%);
 }
 .portrait-block img.siegel:hover { opacity: 0.8; }
 .siegel-text {
