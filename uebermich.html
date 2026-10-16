@@ -178,6 +178,22 @@
       .portrait-text-block { flex-direction: column; }
       .portrait-text-block img { width: 100%; height: auto; }
     }
+    /* Über-mich-Geschichte (Oktober 2026) */
+    .wrap .portrait-satz { font-family: 'Lora', serif; font-size: 22px; line-height: 1.6; color: var(--heading); }
+    .takt-start { margin-top: 2.5rem; }
+    .takt-abstand { margin-top: 2rem; }
+    .takt-hinweis { font-style: italic; opacity: 0.8; }
+    .wrap .abschluss { text-align: center; margin: 3.5rem 0 1rem; }
+    .wrap .abschluss p { font-family: 'Lora', serif; font-size: 24px; line-height: 1.5; color: var(--heading); margin-bottom: 0.6rem; }
+    .motto { text-align: center; }
+    .divider-mitte { margin-left: auto; margin-right: auto; }
+    .hilfe { margin-bottom: 1rem; }
+    .hilfe a { color: var(--rosa); }
+    .nummer { white-space: nowrap; }
+    .wrap .absatz-abheben { margin-top: 2.5rem; }
+    @media (max-width: 600px) {
+      .wrap .abschluss p { font-size: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -198,48 +214,95 @@
   <div class="wrap">
     <h1>Über mich</h1>
     <p class="intro-sub">Beziehung vor Erklärung. Haltung vor Methode.</p>
+    <!-- Takt 1 -->
     <div class="portrait-text-block reveal">
       <img src="images/ueber-mich-portrait.jpg" alt="Ove Krüger">
       <div class="portrait-text">
-        <p>Ich bin kein Therapeut. Kein Guru. Kein Motivationsredner.</p>
-        <p>Ich bin jemand der da war. Ganz unten. Mehrmals. Und wieder aufgestanden ist.</p>
+        <p class="portrait-satz">Ich habe zwei Geburtstage.</p>
+        <p class="portrait-satz">Der zweite ist der 14. März 2010. Den feiere ich bis heute, seit 16 Jahren.</p>
       </div>
     </div>
-    <div class="divider-soft"></div>
-    <h2 class="reveal">Ich war nicht immer der, der begleitet.</h2>
-    <p>Ich war der, der kämpft. Der funktioniert. Der sich selbst wegmacht.</p>
-    <p>Früh haben andere entschieden, wer ich sein soll. IQ 138 mit vier Jahren – und damit war die Rolle klar. Nicht "was brauchst du?", sondern "da geht noch mehr." Meine eigenen Bedürfnisse? Nebensache. Das Drama des begabten Kindes – Alice Miller hat es besser beschrieben als ich es je könnte.</p>
-    <p>Was dabei entsteht, wenn jemand nie lernt, was er wirklich braucht: er sucht es woanders. Ich habe es im Alkohol gefunden. Für einen Moment. Dieses Gefühl von Verbundenheit, von Erfüllung, von – <em>boah, das ist geil.</em> Dopaminbesoffen. Angekommen.</p>
-    <p>Natürlich war es das nicht. Aber es war das Nächste was ich kannte.</p>
-    <p>Zwanzig Jahre. Delirien. Unfälle. Sozialer Absturz. Krankenhäuser. Therapien. Kalte Entzüge. Qualifizierte Entzüge. Eine Schwerbehinderung zu 70 Prozent.</p>
-    <p>Gekämpft habe ich – das stimmt. Aber ehrlicher ist: ich habe mich verpisst. Der Alkohol war mein Ausweg. Meine Art zu verschwinden wenn es zu viel wurde.</p>
+
+    <!-- Takt 2 bis 5 -->
+    <p class="takt-start">Mein Verhalten fiel auf. Mit vier Jahren handelten meine Eltern: Ein Kinderpsychologe stellte einen IQ von 138 fest. Hochbegabung. Alice Miller hat es besser beschrieben, als ich es je könnte: <em>Das Drama des begabten Kindes.</em> Damals bedeutete das: Meine eigenen Bedürfnisse, geschweige denn meine Ideen umzusetzen, war mir quasi unmöglich. Meine Mutter wusste immer schon im Voraus, was für mich noch besser war und wo ich noch mehr gefördert werden musste.</p>
+    <p>Es wäre vermessen zu behaupten, ich hätte gewusst, was ich wollte. Ich war einfach verdammt unglücklich. Ich fing an, meine Ohnmacht, meine Traurigkeit, meine Wut gegen mich selbst zu richten, in Form von Jähzorn und Ungeduld.</p>
+    <p>Früh hat sich ein Satz in mir festgesetzt: Der Junge ist so sensibel, der muss behütet werden.</p>
+    <p>Mit vierzehn trank ich zum ersten Mal Alkohol, und es endete im Vollrausch. Der erste Schluck, wenn es warm durch den Körper strömt. Boah, das ist geil. Alles wird leicht.</p>
+    <p>Viel später wurde der Alkohol mein Lieblingsfreund. Er hat mich belohnt, er hat mich beruhigt, und irgendwann gab es keine Grenze mehr.</p>
+    <p>Ich habe lange gesagt, ich hätte gekämpft. Ehrlicher ist: Ich habe mich verpisst. Der Alkohol war mein Ausweg, meine Art zu verschwinden, wenn es zu viel wurde.</p>
     <p>Das Leben hat mich nicht geschont. Ich mich auch nicht.</p>
+    <p class="takt-start takt-hinweis">Wenn du gerade selbst mittendrin steckst, lies es nur, wenn du dich sicher fühlst.</p>
+    <p class="takt-abstand">13. März 2010. Abend. Dunkel. Seit Wochen liegt Eis auf den Straßen.</p>
+    <p>Mein Wein ist alle. Ich brauche Nachschub, sechs Liter am Tag. Der Laden ist 350 Meter weit weg. Ob ich gehe, ist keine Frage.</p>
+    <p>Meine Hände zittern. Ich schwitze. Mein Herz rast.</p>
+    <p>Draußen: der Geruch von Schnee und Eis. Die Kälte brennt mir im Gesicht. Alle fünf Meter muss ich mich festhalten.</p>
+    <p>Gedanken? Keine. Gefühle? Egal. Es geht nur um eins: die Entzugssymptome bekämpfen.</p>
+    <p>An der Kasse denke ich: Die sehen mal wieder, wie ich zittere. Wie desolat ich bin. Ich bezahle mit dem letzten Kleingeld.</p>
+    <p>Dreißig Meter auf dem Rückweg geht nichts mehr. Ich stehe unter einer Laterne und weiß: Ich schaffe es nicht.</p>
+    <p>Ein Taxi rufen. Mit diesen Fingern, bei minus zehn Grad. Dreißig Minuten warte ich. Dann fährt der Mann mich die 350 Meter nach Hause. Ich entschuldige mich hunderttausend Mal für die kurze Strecke.</p>
+    <p>Die Treppe hoch. In der Wohnung hängt der Rauch, schwer, und der Geruch von altem, abgestandenem Wein. Verwahrlost. Versifft. Die Matratze vollgepisst, der Lattenrost seit langem zusammengebrochen. Mein sicherer Ort. Der einzige Platz, an dem ich mir noch vorstellen kann, zu leben. Zu überleben.</p>
+    <p>Ich mache den Wein auf. Der erste Schluck bleibt nicht drin, wie immer. Dann wirkt er. Ich werde ruhiger. Ich entspanne mich.</p>
+    <p>Noch eine Zigarette, dann ist erst mal alles gut.</p>
+    <p class="takt-abstand"><strong>Ich werde wach.</strong></p>
+    <p>Desinfektionsmittel in der Nase. Apparate piepen. Schläuche. Eine Sauerstoffmaske im Gesicht. Ich liege auf dem Rücken, meine Arme sind dick verbunden, ich spüre das weiße Laken unter mir.</p>
+    <p>Ein fremdes Zimmer. Jemand sagt: Krankenhaus. Verbrennungen zweiten und dritten Grades. Ich denke: die Zigarette.</p>
+    <p>Und – da ist etwas anders. Ich kann es nicht greifen und nicht beschreiben.</p>
+    <p>Ich habe keine Angst mehr.</p>
+    <p>Warum, weiß ich nicht.</p>
+    <p class="takt-start">Am ersten Tag im Krankenhaus erfahre ich von meiner Familie: Meine Wohnung ist ausgebrannt. Die Feuerwehr hat mich rausgeholt, ein Nachbar hat den Rauchmelder gehört.</p>
+    <p>Nach vier Tagen teilt mir das Krankenhaus mit, dass ich nicht länger bleiben kann. Ich habe keine Wohnung mehr.</p>
+    <p>Ich will in die qualifizierte Entgiftung. Ich werde ins Klinikum Ochsenzoll gefahren, in die Psychiatrie. Drei Ärzte. Ich bitte inständig um einen Platz. Ich weiß nicht, wohin sonst.</p>
+    <p>Dreimal Nein. So erinnere ich es.</p>
+    <p>Ich gehe auf die Tür zu. Sie ist dunkel. Von rechts fällt Sonne in den Raum. Ich stehe unter Medikamenten, mir ist dieses Bild geblieben. Es ist kein Gefühl von Hoffnungslosigkeit. Es ist Hingabe.</p>
+    <p>Ich öffne die Tür. Einer der Ärzte ruft mich zurück: Ein Platz ist doch noch frei.</p>
+    <p class="takt-start">Damit beginnt eine Zeit, die ich ganz für mich allein habe. Neun Monate. Heute nenne ich sie ein inneres Retreat.</p>
+    <p>Die Entgiftung dauert 21 Tage. Von April bis Ende August lebe ich in der Vorsorgeeinrichtung in Hamburg. Ich genieße es.</p>
+    <p>In Hamburg begegnet mir einer meiner wichtigsten Mentoren. Er hatte selbst lange mit Sucht zu tun. Er führt mich zum Zen-Buddhismus. Und zu einem Buch: Eckhart Tolle, <em>Jetzt</em>. Für mich der eigentliche Game Changer.</p>
+    <p>Vom 1*. September bis zum 23. Dezember: Langzeittherapie in Kassel. Ich fange mit Nordic Walking an. Am Ende gehe ich jeden Tag vier Kilometer durch die Kasseler Berge.</p>
+    <p>Mein Körper erinnert sich. An die Zeit des Leistungssports, an den Zehnkampf. Und an die Fähigkeit, mir selbst in den Hintern zu treten und den inneren Schweinehund zu überwinden.</p>
+    <p>Ich schwimme jeden Tag zwei Kilometer, in einem Becken, das nur fünfzehn Meter lang ist. Konsequenz. Disziplin.</p>
+    <p>Langsam kommen mein Selbstwert, meine Selbstverantwortung und meine Selbstliebe zurück.</p>
+    <p>Häufig zieht es mich morgens raus, noch bevor die Sonne aufgeht und die anderen aufwachen. Ich gehe vor die Tür, mit meinem Kaffee. Endlich erlaube ich es mir, einfach dazustehen und zu sein. Ich lehne an einem Pfeiler und schaue auf eine Baumgruppe, im Dunkeln fast konturlos. Die Formen lösen sich auf, die Gedanken auch. Ich bin da. Zum ersten Mal über längere Zeit. Langsam zeigt sich der Sonnenaufgang. Ich finde in mir eine enorme Stille und Weite. Ich kann sie bis heute fühlen.</p>
+    <p>Auch in den knapp bemessenen Pausen des Therapiealltags gehe ich zu diesem Pfeiler, um bei mir zu sein. Hinter mir sitzen die anderen am Tisch und reden über alles Mögliche.</p>
+    <p>Drei Tage vor Ende der Therapie: Der Platz in der Nachsorge, fest zugesagt, ist weg. Meine Therapeuten und das ganze Personal sind in heller Aufregung. Ich nicht. Es trifft mich kaum.</p>
+    <p>Ich ziehe zurück in meine alte Wohnung. Meine Familie hat sie wieder hergerichtet. Man hat mir geraten, nie dorthin zurückzugehen, wo es passiert ist. Es fühlt sich total richtig an.</p>
+
     <div class="divider-soft"></div>
     <h2 class="reveal">Say Yes to your Scheiß.</h2>
-    <p>Irgendwann war der Widerstand aufgebraucht. Die Kontrolle weg. Der Kampf vorbei.</p>
-    <p>Ich habe aufgehört zu kämpfen. Nicht weil ich stark war – sondern weil nichts mehr ging.</p>
-    <p>Und genau da begann etwas Neues.</p>
-    <p>Ich lebe seit Jahren abstinent. Ich bin dankbar für jeden einzelnen Tag meines Absturzes – weil er mich genau dahin gebracht hat wo ich heute bin. Ohne das Dunkel keine Warme Weite.</p>
-    <p class="orange-satz">Immer wieder aufstehen.</p>
-    <p>Das ist kein Motivationssatz. Das ist meine Biografie.</p>
+    <p>Irgendwann war nichts mehr da, wovor ich hätte verschwinden können. Der Widerstand aufgebraucht. Die Kontrolle weg. Und genau da begann etwas Neues.</p>
+    <p>Ich lebe seit 16 Jahren zufrieden abstinent. Ich bin dankbar für jeden einzelnen Tag meines Absturzes, was sich erst mal paradox und völlig verrückt anhört – weil er mich genau dahin gebracht hat wo ich heute bin. Ohne das Dunkel keine Warme Weite.</p>
     <p>Und dann irgendwann noch etwas anderes gelernt: meine Zartheit zu spüren. Meine Traurigkeit. Meine Melancholie. Und zu merken – das darf sein. Das bin auch ich.</p>
-    <p>Als mir klar wurde dass andere Menschen mich nicht verletzen können – sondern dass das immer eine alte Verletzung in mir ist die ich auf alle möglichen komischen Arten kompensiert habe – bin ich innerlich weicher geworden. Empathischer. Und gleichzeitig handlungsfähiger.</p>
+    <p>Immer öfter komme ich mir liebevoll auf die Schliche: Mein Ego jagt wieder der Möhre hinterher, die es sich selbst vor die Nase hält. Ich kann darüber lachen. Mein tägliches Bonbon, aber manchmal auch bittere Pille. Alte Muster, die mich bisher beschützt haben. Dadurch bin ich weicher geworden. Empathischer. Und gleichzeitig handlungsfähiger.</p>
     <p class="pippi-satz">Nicht trotzdem. Deshalb.</p>
     <p class="orange-satz">Und dann: Das Leben ist geil. Wirklich.</p>
+
     <div class="divider-soft"></div>
     <h2 class="reveal">Wie ich begleite</h2>
     <p>Ich bin nicht hier um etwas wegzumachen.</p>
     <p>Ich bin hier damit du wieder landen kannst – und von dort aus siehst was möglich ist.</p>
-    <p>Ich bin nicht derjenige, der sagt, wo es langgeht. Ich bin derjenige der bleibt. Der Raum hält ohne zu drängen. Der weiß, wie es sich anfühlt, wenn nichts mehr greift – und der deshalb nicht in Panik gerät wenn es bei dir genauso ist.</p>
+    <p>Ich bin nicht derjenige, der sagt, wo es langgeht.</p>
+    <p class="absatz-abheben">Ich bin derjenige der bleibt. Der Raum hält ohne zu drängen. Der weiß, wie es sich anfühlt, wenn nichts mehr greift – und der deshalb nicht in Panik gerät wenn es bei dir genauso ist.</p>
     <p>Ich begegne dem was kommt mit Humor wenn es passt. Mit Ernsthaftigkeit wenn es nötig ist.</p>
     <p class="pippi-satz">Immer Freund. Manchmal liebevoller Arschtreter. Immer auf deiner Seite.</p>
     <p>Regulation vor Transformation. Ankommen vor Veränderung. Würde vor Diagnose.</p>
     <p>Nicht Therapie. Nicht Optimierung. Sondern: erst landen. Dann schauen was möglich ist.</p>
+
     <div class="divider-soft"></div>
     <h2 class="reveal">Und noch was</h2>
     <p>Ich werde nie erwachsen werden. Das will ich auch gar nicht.</p>
     <p>Beim ersten Treffen mit meiner Liebsten vor fünfzehn Jahren habe ich alles auf den Tisch gelegt. Nichts zurückgehalten. Das ist nach wie vor meine Devise.</p>
-   <p>Nebenbei schreibe ich an meinem Buch – Arbeitstitel: <em>Holpersteine</em>. Immer wieder aufstehen.</p>
+
+    <div class="abschluss">
+      <p>Ich bin kein Therapeut. Kein Guru. Kein Motivationsredner.</p>
+      <p>Ich bin jemand, der da war. Ganz unten. Und wieder aufgestanden ist.</p>
+    </div>
+    <p class="orange-satz motto">Immer wieder aufstehen.</p>
+    <p class="motto">Das ist kein Motivationssatz. Das ist meine Biografie.</p>
+    <div class="divider-soft divider-mitte"></div>
+    <div class="brief-einladung hilfe">
+      <p class="brief-subtext">Wenn dich das gerade sehr aufwühlt, kannst du mir gerne <a href="kontakt.html">schreiben</a>. Oder such dir jemanden, der im Moment wirklich für dich da ist.</p>
+      <p class="brief-subtext">Im Notfall: Telefonseelsorge, rund um die Uhr, kostenlos und anonym: <strong class="nummer">0800&nbsp;111&nbsp;0&nbsp;111</strong></p>
+    </div>
     <a class="zurueck" href="index.html">← Zurück zur Startseite</a>
     <div class="divider-soft"></div>
     <div class="brief-einladung reveal">
