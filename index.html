@@ -8,6 +8,8 @@
     plausible.init()
   </script>
   <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- VORSCHAU: runder Knopf im Bild. Nicht für die Live-Seite gedacht. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sinnwärts Studio – Begleitung für Menschen, die spüren, dass es so nicht weitergeht. Regulation, Suchtdynamiken, bewusster Umgang mit KI. Ove Krüger, Hamburg.">
 <link rel="canonical" href="https://sinnwaerts-studio.de/">
@@ -18,15 +20,15 @@
 <meta property="og:url" content="https://sinnwaerts-studio.de/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-  <title>Ove Krüger · Sinnwärts Studio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>VORSCHAU · Ove Krüger · Sinnwärts Studio</title>
+  <link rel="stylesheet" href="style_vorschau.css">
   <style>
   .hero-text-top {
     font-size: clamp(22px, 3.5vw, 36px);
   }
   .hero-text-overlay {
     position: absolute;
-    bottom: 7.5rem;
+    bottom: 10.5rem;
     left: 50%;
     transform: translateX(-50%) perspective(200px) rotateX(20deg);
     transform-origin: bottom center;
@@ -39,6 +41,14 @@
     white-space: nowrap;
     letter-spacing: 0.02em;
   }
+  @media (max-width: 600px) {
+    .hero-text-overlay { bottom: 10.75rem; }
+  }
+  /* VORSCHAU: Sucht-Zeile unter der Subline */
+  .hero-content .subline { margin-bottom: 1.75rem; }
+  .hero-content .sucht-zeile { font-family: 'Lora', serif; font-size: 21px; line-height: 1.7; color: var(--text); max-width: 580px; margin: 0 auto 2.5rem; text-align: center; }
+  .hero-content .sucht-zeile em { color: var(--tuerkis); white-space: nowrap; }
+  @media (max-width: 600px) { .hero-content .sucht-zeile { font-size: 18px; } }
 </style>
 </head>
 <body>
@@ -60,9 +70,6 @@
             stroke="#d4882a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
     </svg>
     <div class="hero-text-overlay">Da ist noch mehr.</div>
-    <audio id="meer-audio" src="start.wellen.mp3" loop preload="none"></audio>
-  </div>
-  <div class="hero-content">
     <div class="atem-einladung" id="atem-einladung" role="button" tabindex="0" aria-label="Meeresklang starten oder stoppen">
       <span class="ton-icon" aria-hidden="true">
         <svg width="24" height="24" viewBox="0 0 28 28">
@@ -72,8 +79,12 @@
       </span>
       <span class="atem-label" id="atem-label">Atme mit dem Meer.</span>
     </div>
+    <audio id="meer-audio" src="start.wellen.mp3" loop preload="none"></audio>
+  </div>
+  <div class="hero-content">
     <h1>Ich war schon da,<br>wo du gerade steckst.</h1>
     <p class="subline">Hier darf es langsamer werden.</p>
+    <p class="sucht-zeile">Lange habe ich in meiner Sucht nach Sinn gesucht. <em>Sucht sucht Sinn.</em></p>
     <div class="fliesstext">
       <p>Manches hat keinen Namen. Es fühlt sich einfach zu viel an. Zu schnell. Zu leer.</p>
       <p>Noch kein Name nötig. Noch keine Richtung. Ankommen reicht.</p>
