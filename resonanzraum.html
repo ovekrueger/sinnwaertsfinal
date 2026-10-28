@@ -333,8 +333,28 @@
       const label = document.getElementById('klang-label');
       const audio = document.getElementById('klangschale-audio');
       const wrap = document.getElementById('klangschale-wrap');
+      let blendetAus = false;
+      function stoppen() {
+        // Sanft ausblenden (ca. 0,8 s), dann anhalten – kein hartes Abschneiden
+        if (blendetAus) return;
+        blendetAus = true;
+        const schritt = setInterval(function () {
+          if (audio.volume > 0.08) {
+            audio.volume = Math.max(0, audio.volume - 0.08);
+          } else {
+            clearInterval(schritt);
+            audio.pause();
+            audio.volume = 1;
+            blendetAus = false;
+            wrap.classList.remove('klingt');
+            label.textContent = 'Lass sie klingen.';
+          }
+        }, 70);
+      }
       function klingen() {
-        if (!audio.paused) return; // schon am klingen, nicht überlappen
+        if (blendetAus) return;
+        if (!audio.paused) { stoppen(); return; } // zweiter Klick: Gong sanft beenden
+        audio.volume = 1;
         audio.currentTime = 0;
         audio.play().catch(function () {
           // Falls der Browser Autoplay-Regeln greift, still bleiben
