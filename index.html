@@ -129,7 +129,7 @@
     </div>
     <div class="karte karte-2 reveal">
       <h3><a href="sucht-regulation.html">Sucht & Regulation</a></h3>
-      <p>Nicht aufhören müssen – sondern wissen, wofür.</p>
+      <p>Für Betroffene und Angehörige. Vermeiden ist menschlich. Wir schauen gemeinsam, was darunter sucht.</p>
     </div>
     <div class="karte karte-3 reveal">
       <h3><a href="ki-sociale-medien.html">KI & Social Media</a></h3>
@@ -359,13 +359,27 @@
       const einladung = document.getElementById('atem-einladung');
       const label = document.getElementById('atem-label');
       const audio = document.getElementById('meer-audio');
+      let blendetAus = false;
       function toggleMeer() {
+        if (blendetAus) return;
         if (audio.paused) {
+          audio.volume = 1;
           audio.play().catch(function () {});
           label.textContent = 'Es trägt …';
         } else {
-          audio.pause();
-          label.textContent = 'Atme mit dem Meer.';
+          // Sanft ausblenden (ca. 1,2 s), dann anhalten – kein hartes Abschneiden
+          blendetAus = true;
+          const schritt = setInterval(function () {
+            if (audio.volume > 0.06) {
+              audio.volume = Math.max(0, audio.volume - 0.06);
+            } else {
+              clearInterval(schritt);
+              audio.pause();
+              audio.volume = 1;
+              blendetAus = false;
+              label.textContent = 'Atme mit dem Meer.';
+            }
+          }, 70);
         }
       }
       bild.addEventListener('click', toggleMeer);
