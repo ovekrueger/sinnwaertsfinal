@@ -779,3 +779,106 @@ footer a:hover { opacity: 0.7; }
     transition: none;
   }
 }
+
+/* =========================
+   KNOPF IM BILD  (VORSCHAU)
+   Einheitlicher runder Knopf für drei Seiten:
+   Startseite (.atem-einladung im Hero), Resonanzraum (.klang-trigger),
+   Für dich / Phoenix (.phoenix-trigger).
+   Greift nur bei diesen drei Buttons, nichts anderes wird verändert.
+   ========================= */
+.hero-img-wrap .atem-einladung,
+.klang-trigger,
+.phoenix-trigger {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  width: max-content;
+  max-width: 92%;
+  cursor: pointer;
+  z-index: 6;
+  user-select: none;
+  color: #ffffff;
+  animation: ton-text-farbpuls 6s ease-in-out infinite;
+}
+.hero-img-wrap .atem-einladung:hover,
+.klang-trigger:hover,
+.phoenix-trigger:hover {
+  animation-play-state: paused;
+  color: var(--rosa);
+}
+.atem-einladung .ton-icon,
+.klang-trigger .ton-icon,
+.phoenix-trigger .ton-icon {
+  width: 72px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  background: rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.25);
+  filter: none;
+  animation: ton-icon-atem 4.5s ease-in-out infinite, knopf-ring 4.5s ease-in-out infinite;
+}
+.atem-einladung .ton-icon svg,
+.klang-trigger .ton-icon svg,
+.phoenix-trigger .ton-icon svg {
+  width: 36px;
+  height: 36px;
+  transform: translateX(2px);
+}
+.atem-einladung .ton-icon svg circle,
+.klang-trigger .ton-icon svg circle,
+.phoenix-trigger .ton-icon svg circle {
+  display: none;
+}
+@keyframes knopf-ring {
+  0%, 100% { box-shadow: 0 2px 18px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(255, 255, 255, 0.35); }
+  50%      { box-shadow: 0 2px 18px rgba(0, 0, 0, 0.25), 0 0 0 12px rgba(255, 255, 255, 0); }
+}
+.atem-einladung .atem-label,
+.klang-trigger .ton-label,
+.phoenix-trigger .ton-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55), 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+/* Platz schaffen: Bildtexte rücken über den Knopf */
+.hero-resonanz-text { bottom: 9.5rem; }
+/* Startseite: Der Knopf wohnt jetzt im Bild, darunter braucht der Text etwas mehr Luft */
+.hero-img-wrap + .hero-content { padding-top: 6rem; }
+@media (max-width: 600px) {
+  .hero-img-wrap .atem-einladung,
+  .klang-trigger,
+  .phoenix-trigger { bottom: 2.75rem; }
+  .atem-einladung .ton-icon,
+  .klang-trigger .ton-icon,
+  .phoenix-trigger .ton-icon { width: 64px; height: 64px; }
+  .atem-einladung .ton-icon svg,
+  .klang-trigger .ton-icon svg,
+  .phoenix-trigger .ton-icon svg { width: 32px; height: 32px; }
+  .atem-einladung .atem-label,
+  .klang-trigger .ton-label,
+  .phoenix-trigger .ton-label { font-size: 17px; }
+  .hero-resonanz-text { bottom: 10.5rem; }
+  .hero-img-wrap + .hero-content { padding-top: 5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-img-wrap .atem-einladung,
+  .klang-trigger,
+  .phoenix-trigger,
+  .atem-einladung .ton-icon,
+  .klang-trigger .ton-icon,
+  .phoenix-trigger .ton-icon { animation: none; }
+}
